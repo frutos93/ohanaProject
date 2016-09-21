@@ -34,12 +34,9 @@
                 </button>
 
                 <!-- Branding Image -->
-                <div class="row">
-                    <a href="{{ url('/') }}">
-                        <img src="{{asset('assets/images/OhanaLogoo.png')}}" />
-                    </a>
-                </div>                  
-
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{asset('assets/images/OhanaLogo.png')}}"
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
