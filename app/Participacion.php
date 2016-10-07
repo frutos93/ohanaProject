@@ -9,10 +9,10 @@ class Participacion extends Model
     protected $table = 'participacion';
 
     public function participante(){
-        return $this->hasOne('App\\Participante');
+        return $this->hasOne('App\\Participante', "id");
     }
 
     public function evento(){
-        return $this->hasOne('App\\Evento');
+        return $this->hasOne('App\\Evento', "id");
     }
 }

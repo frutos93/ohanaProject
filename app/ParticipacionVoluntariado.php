@@ -9,9 +9,9 @@ class ParticipacionVoluntariado extends Model
     protected $table = 'participacion_voluntariado';
     
     public function evento(){
-        return $this->hasOne('App\\Evento');
+        return $this->hasOne('App\\Evento', "id");
     }
     public function voluntario(){
-        return $this->hasOne('App\\Voluntario');
+        return $this->hasOne('App\\Voluntario', "id");
     }
 }

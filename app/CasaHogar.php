@@ -8,7 +8,7 @@ class CasaHogar extends Model
 {
     protected $table = 'casahogar';
 
-    public function participacion_voluntariado(){
+    public function participantes(){
         return $this->hasMany('App\\Participante', 'casahogar_id');
     }
 }

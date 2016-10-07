@@ -12,7 +12,7 @@ class Evento extends Model
         return $this->hasMany('App\\ParticipacionVoluntariado', 'evento_id');
     }
 
-    public function participacion(){
+    public function participaciones(){
         return $this->hasMany('App\\Participacion', 'evento_id');
     }
 }
