@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.layout')
 
 @section('content')
         <!-- Page Content -->

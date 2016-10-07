@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', function () {
+    return view('gallery');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/gallery', 'HomeController@gallery');
