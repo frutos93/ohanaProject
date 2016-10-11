@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('gallery');
 });
 
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/estadisticas', function () {
+    return view('statistics');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
