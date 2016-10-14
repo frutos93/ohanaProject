@@ -28,7 +28,7 @@
 
             line-height: 30px;
             color: #777;
-            background: #4CAF50;
+            background: #f5f8fa;
         }
 
         #contact input[type="text"],
@@ -43,7 +43,7 @@
         #contact {
             background: #F9F9F9;
             padding: 25px;
-            margin: 150px 0;
+            margin-top:5%;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
 
@@ -144,30 +144,49 @@
         :-ms-input-placeholder {
             color: #888;
         }
+
+        .contactBody{
+            text-align: center;
+        }
+        .contactBody img{
+            width: 15%;
+        }
+
     </style>
-<div class="container">
-    <form id="contact" action="" method="post">
-        <h3>Contacto</h3>
-        <h4>Llena esta forma para contactarnos</h4>
-        <fieldset>
-            <input placeholder="Tu Nombre" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Apellido" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Correo Electrónico" type="tel" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Número Telefónico (opcional)" type="url" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <textarea placeholder="Tu Mensaje" tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-            <button name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
-        </fieldset>
-    </form>
-</div>
+    <div class="contactBody">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="{{asset('assets/images/OhanaLogoo.png')}}">
+                    <h1>Ponte en contacto con nosotros.</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form id="contact" action="" method="post">
+            <h3>Contacto</h3>
+            <h4>Llena esta forma para contactarnos</h4>
+            <fieldset>
+                <input placeholder="Tu Nombre" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Tu Apellido" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Tu Correo Electrónico" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Tu Número Telefónico (opcional)" type="url" tabindex="4" required>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Tu Mensaje" tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
+            </fieldset>
+        </form>
+    </div>
 
 @endsection

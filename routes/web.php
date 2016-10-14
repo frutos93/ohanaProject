@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
+    return view('welcome');
+});
+Route::get('/galeria', function () {
     return view('gallery');
 });
 
@@ -22,9 +25,10 @@ Route::get('/contacto', function () {
 Route::get('/estadisticas', function () {
     return view('statistics');
 });
+Route::get('/eventos', function(){
+    return view('eventos');
+});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
-Route::get('/gallery', 'HomeController@gallery');
