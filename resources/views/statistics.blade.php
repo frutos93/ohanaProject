@@ -1,45 +1,89 @@
 @extends('layouts.layout')
 
 @section('content')
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    {{ Html::image('assets/images/bookLogo.png', '', ['class' => 'img-logo-book']) }}
-                    <div class="col-lg-12 text-center">
-                        <h2>Datos de México</h2>
-                    </div>
-                </div>
+
+<link href="css/app.css" rel="stylesheet">
+
+<section id="estadisticas">
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>
+                Datos de México
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                
+                {{ Html::image('assets/images/bookLogo.png', '', ['class' => 'img-logo-big']) }}
+                <h2>
+                    ¿Sabías que...?
+                </h2>
+                <br>
+                <h4>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </h4>
             </div>
         </div>
-    </header>
-
-
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>¿Sabías que...?</h2>
+        <br>
+        <div class="row">
+            <div class="page-header text-center">
+                    <h1>
+                        Nuestra actualidad...
+                    </h1>
                 </div>
-                <br><br><br><br><br><br>
-
-                <div class="col-md-4 text-center">
-                    {{ Html::image('assets/images/bookLogo.png', '', ['class' => 'img-logo-book']) }}<br>
-                    <p>La falta de calidad en la educación dificulta el desarrollo de una fuerza de trabajo sana, educada y
-                        productiva, según el índice del Foro Económico Mundial.</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    {{ Html::image('assets/images/bookLogo.png', '', ['class' => 'img-logo-book']) }}<br>
-                    <p>La calidad de la educación en México ocupa uno de los últimos lugares de listado de 124 países</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    {{ Html::image('assets/images/bookLogo.png', '', ['class' => 'img-logo-book']) }}<br>
-                    <p>Más de 34 millones de personas sufren rezago, analfabetismo o tienen apenas cuatro años de
-                        estudio.</p>
-                </div>
+            <div class="col-md-4 text-center">
+            {{ Html::image('assets/images/computerLogo.png', '', ['class' => 'img-logo-book']) }}<br>
+                <h2>
+                    Tecnologia
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                </p>
             </div>
+            <div class="col-md-4 text-center">
+            {{ Html::image('assets/images/schoolLogo.png', '', ['class' => 'img-logo-book']) }}<br>
+                <h2>
+                    Trabajo
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                </p>
+            </div>
+            <div class="col-md-4 text-center">
+                {{ Html::image('assets/images/pencilLogo.png', '', ['class' => 'img-logo-book']) }}
+                <br>
+                <h2>
+                    Educacion
+                </h2>
+                <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.
+                </p>
+                
+            </div>
+        </div>  
+        <br>
+        <div class="page-header text-center">
+            <h1>
+                Ohana por el cambio
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5 text-center">
+            {{ Html::image('assets/images/notebookLogo.png', '',  ['class' => 'img-logo-book', 'style' => 'max-width: 384px; display: block; margin-left: auto; margin-right: auto;']) }}
+            </div>
+            <div class="col-md-7">
+                <h2>
+                Nuestro trabajo es:
+                </h2>
+                <br>
+                <ul>
+                  <li><h4>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh<h4></li><br>
+                  <li><h4>tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod<h4></li><br>
+                  <li><h4>tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod<h4></li><br>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </div>
-        </div>
-    </section>
     @endsection
