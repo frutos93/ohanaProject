@@ -11,8 +11,7 @@
 <body>
 <div class="container">
 
-    @include('layouts.navigationBar')
-    @include('layouts.slider')
+    @include('layouts.navBar')
 
     <!--
     <div id="main" class="row">
@@ -24,6 +23,8 @@
 
     @yield('content', '<p>No Content</p>')
 
+
+    @include('layouts.footer')
 
 </div>
 </body>

@@ -10,7 +10,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img_chania.jpg" alt="Chania">
+      <img src="{{asset('assets/images/OhanaLogo.png')}}" alt="ohanaLogo">
     </div>
 
     <div class="item">
