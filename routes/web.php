@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/about', function()
+{
+    return view('about');
+});
+
+Route::get('/gallery', function()
+{
+    return view('gallery');
+});
+
+Route::get('/donate', function()
+{
+    return view('donate');
+});
