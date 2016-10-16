@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('gallery');
+});
+
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/estadisticas', function () {
+    return view('statistics');
 });
 
 Auth::routes();
@@ -24,12 +32,9 @@ Route::get('/about', function()
     return view('about');
 });
 
-Route::get('/gallery', function()
-{
-    return view('gallery');
-});
-
 Route::get('/donate', function()
 {
     return view('donate');
 });
+
+Route::get('/gallery', 'HomeController@gallery');
