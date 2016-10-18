@@ -29,6 +29,10 @@ Route::get('/eventos', function(){
     return view('eventos');
 });
 
+Route::get('/participa', function () {
+    return view('about');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
