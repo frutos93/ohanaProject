@@ -2,6 +2,13 @@
 
 @section('content')
 
+  <style>
+
+    .row a:hover{
+      cursor: pointer;
+    }
+
+  </style>
 <link href="css/app.css" rel="stylesheet">
 
   <!-- Gallery container -->
@@ -15,7 +22,7 @@
 
       <br>
       <div class="row">
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 1" href="#">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 1">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
         <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 2" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
         <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 3" href="#">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
         <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 4" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
