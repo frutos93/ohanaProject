@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style type ="text/css">
+
+      #container {
+        height: 450px;
+        width: 650px;
+        margin: auto;
+        position: relative;
+      }
+
+      #img {
+        height: 450px;
+        width: 650px;
+        position: absolute;
+      }
+
+      #left_holder {
+        height: 450px;
+        width: 100px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+
+      #right_holder {
+        height: 450px;
+        width: 100px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+      }
+
+      .left {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 40%;
+        left: 0px;
+      }
+
+      .right {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        top: 40%;
+        right: 0px;
+      }
+      p {
+          color: white;
+          width: 500px;
+          border: 25px;
+          padding: 25px;
+          margin: 25px;
+      }
+      
+</style>
+
+<script type="text/javascript">
+  var imageCount = 1;
+  var total = 4;
+
+  function slide(x) {
+      var image = document.getElementById('img');
+      imageCount = imageCount + x;
+      if (imageCount == 5) imageCount = 1;
+      
+      if (imageCount == 0) imageCount = 4;
+
+      image.src = "images/" + imageCount + ".jpg";  
+  }
+
+</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Galeria de fotos</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Ohana</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="statistics.html">Datos de México</a></li>
+            <li><a href="gallery.html">Galería de fotos</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li class="active"><a href="#about">Participa con Nosotros</a></li>
+            <li><a href="#contact">Contactos</a></li>
+            <li><a href="#contact">Donaciones</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    <h1 align="center">Participa con Nosotros</h1>
+    </div>
+
+    <div id="container"> 
+    <img src="images/1.jpg" id="img"/>
+    <div id=left_holder><img onClick="slide(-1)" class="left" src="images/left_arrow.png"/></div>
+    <div id=right_holder><img onClick="slide(1)" class="right" src="images/right_arrow.png"/></div>
+    </div>
+    
+
+    <h2 style="color:black;">¿Qué hace un voluntariado en Ohana?</h2>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
+     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+     laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non 
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <h3 style="color:white;">¿Cómo participar en Ohana?</h3>
+    <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
+     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+     laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non 
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+
+  <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+      <button class="close" type="button" data-dismiss="modal">×</button>
+      <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body">
+      <div id="modalCarousel" class="carousel">
+            <div class="carousel-inner">
+            </div>
+            <!--
+            <a class="carousel-control left" href="#modalCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>-->
+            
+          </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-default pull-left" href="#modalCarousel" data-slide="prev">Anterior</button>
+      <!--<button class="btn btn-default" data-dismiss="modal">Close</button>-->
+      <button class="btn btn-default pull-right" href="#modalCarousel" data-slide="next">Siguiente</button>
+    </div>
+     </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script   src="http://code.jquery.com/jquery-2.0.2.min.js"   integrity="sha256-TZWGoHXwgqBP1AF4SZxHIBKzUdtMGk0hCQegiR99itk="   crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
