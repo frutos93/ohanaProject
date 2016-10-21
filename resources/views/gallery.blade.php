@@ -2,6 +2,14 @@
 
 @section('content')
 
+
+<style>
+    .row a:hover{
+        cursor: pointer;
+    }
+</style>
+
+
 <link href="css/app.css" rel="stylesheet">
 
   <!-- Gallery container -->
@@ -12,31 +20,28 @@
             </h1>
         </div>
     <div class="row">
-
       <br>
-      <div class="row">
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 1" href="#">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 2" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 3" href="#">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 4" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 5" href="#">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 6" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 7" href="#">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 8" href="#">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 9" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 10" href="#">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 11" href="#">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 12" href="#">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 13" href="#">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 14" href="#">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 15" href="#">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-        <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Verano Ohana 16   " href="#">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
-      </div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 1">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 2">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 3">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 4">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 5">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 6">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 7">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 8">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 9">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 10">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 11">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 12">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 13">{{ Html::image('assets/images/2.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 14">{{ Html::image('assets/images/3.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 15">{{ Html::image('assets/images/1.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
+        <div class="col-lg-3 col-sm-4 col-xs-6"><a data-toggle="modal" title="Verano Ohana 16">{{ Html::image('assets/images/4.jpg', '', ['class' => 'thumbnail img-responsive']) }}</a></div>
     </div>
   </div>
 
 
-  <div class="modal" id="myModal" role="dialog">
+  <div class="modal" id="myModal" role="dialog" style="padding-top: 32px;">
     <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
@@ -65,6 +70,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/scripts.js"></script>
+    <script src="js/galleryModal.js"></script>
 
 @endsection
