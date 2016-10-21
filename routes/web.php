@@ -27,4 +27,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/about', function()
+{
+    return view('about');
+});
+
+Route::get('/donate', function()
+{
+    return view('donate');
+});
+
 Route::get('/gallery', 'HomeController@gallery');
