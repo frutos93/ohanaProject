@@ -23,6 +23,10 @@ Route::get('/estadisticas', function () {
     return view('statistics');
 });
 
+Route::get('/participa', function () {
+    return view('ParticipaConNosotros');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
