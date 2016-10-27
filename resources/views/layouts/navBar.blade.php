@@ -5,11 +5,11 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Ohana</a></li>
-            <li><a href="#">Datos de México</a></li>
-            <li><a href="#">Galeria</a></li>
-            <li><a href="#">Eventos</a></li>
+            <li><a href="/estadisticas">Datos de México</a></li>
+            <li><a href="/gallery">Galeria</a></li>
+            <li><a href="/eventos">Eventos</a></li>
             <li><a href="#">Participa con nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/contacto">Contacto</a></li>
         </ul>
         </div>
     </nav>

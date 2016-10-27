@@ -23,6 +23,9 @@ Route::get('/estadisticas', function () {
     return view('statistics');
 });
 
+Route::get('/eventos', function(){
+    return view('eventos');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
