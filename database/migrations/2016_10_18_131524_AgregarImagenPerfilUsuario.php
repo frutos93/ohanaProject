@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class HacerTablaEventos extends Migration
+class AgregarImagenPerfilUsuario extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class HacerTablaEventos extends Migration
      */
     public function up()
     {
-        Schema::create('evento', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre');
-            $table->date('fecha');
-            $table->string('lugar');
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->binary('profile_image')->nullable();
         });
     }
 
@@ -30,6 +25,8 @@ class HacerTablaEventos extends Migration
      */
     public function down()
     {
-        Schema::drop('evento');
+        Schema::table('users', function ($table) {
+            $table->dropColumn('profile_image');
+        });
     }
 }

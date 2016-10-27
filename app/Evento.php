@@ -15,4 +15,12 @@ class Evento extends Model
     public function participaciones(){
         return $this->hasMany('App\\Participacion', 'evento_id');
     }
+
+    public function creado_por(){
+        return $this->hasOne('App\\Director', 'id', 'creado_por');
+    }
+
+    public function coordinado_por(){
+        return $this->hasMany('App\\CoordinaEvento', 'evento_id');
+    }
 }

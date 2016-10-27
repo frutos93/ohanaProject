@@ -15,10 +15,10 @@ class HacerTablaParticipantes extends Migration
     {
         Schema::create('participante', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('curp', 20);
             $table->string('nombre');
             $table->string('apellido_paterno');
             $table->string('apellido_materno')->nullable();
+            $table->string('curp', 20);
             $table->integer('casahogar_id');
             $table->softDeletes();
             $table->timestamps();

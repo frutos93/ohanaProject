@@ -17,8 +17,8 @@ class HacerTablaVoluntarios extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido_paterno');
-            $table->string('escuela');
             $table->string('apellido_materno')->nullable();
+            $table->string('escuela');
             $table->softDeletes();
             $table->timestamps();
         });

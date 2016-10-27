@@ -15,10 +15,10 @@ class HacerTablaCasasHogar extends Migration
     {
         Schema::create('casahogar', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('direccion');
-            $table->string('persona_contacto');
-            $table->string('telefono');
             $table->string('nombre');
+            $table->string('direccion');
+            $table->string('telefono');
+            $table->string('persona_contacto');
             $table->softDeletes();
             $table->timestamps();
         });
