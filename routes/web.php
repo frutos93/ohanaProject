@@ -26,6 +26,18 @@ Route::get('/estadisticas', function () {
 Route::get('/eventos', function(){
     return view('eventos');
 });
+
+Route::get('/participa', function () {
+    return view('ParticipaConNosotros');
+});
+Route::get('/coordinadores', function () {
+    return view('coordinadores');
+});
+
+Route::get('/agregarCoordinador', function () {
+    return view('agregarCoordinador');
+
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
