@@ -23,8 +23,17 @@ Route::get('/estadisticas', function () {
     return view('statistics');
 });
 
+
 Route::get('/participa', function () {
     return view('ParticipaConNosotros');
+});
+Route::get('/coordinadores', function () {
+    return view('coordinadores');
+});
+
+Route::get('/agregarCoordinador', function () {
+    return view('agregarCoordinador');
+
 });
 
 Auth::routes();
