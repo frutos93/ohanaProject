@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('gallery');
+    return view('home');
 });
 
 Route::get('/contacto', function () {

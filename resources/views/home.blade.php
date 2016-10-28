@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
-<head>
     <style type ="text/css">
 
       #container {
@@ -115,36 +114,17 @@
 
 </script>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Home</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-  </head>
-  <body>
-
-   
-
-    <div class="container">
-   
     </div>
 
     <div id="container"> 
     <img src="images/1.jpg" id="img"/>
-    <div id=left_holder><img onClick="slide(-1)" class="left" src="images/left_arrow.png"/></div>
-    <div id=right_holder><img onClick="slide(1)" class="right" src="images/right_arrow.png"/></div>
+    <div id=left_holder><img onClick="slide(-1)" class="left" src="{{asset('assets/images/left_arrow.png')}}"/></div>
+    <div id=right_holder><img onClick="slide(1)" class="right" src="{{asset('assets/images/right_arrow.png')}}"/></div>
     </div>
     
     <div class="box1">
-    <img src="images/logo.png"  style="width:200px;height:210px;border-radius:10px;" align="right">
+    <img src="{{asset('assets/images/logo.png')}}"  style="width:200px;height:210px;border-radius:10px;" align="right">
     <h2 >¿Qué es Ohana?</h2>
    <div class="boxed1">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
