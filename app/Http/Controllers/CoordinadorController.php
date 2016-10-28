@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 Use DB;
-class PostAgrCoordController extends Controller
+class CoordinadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PostAgrCoordController extends Controller
      */
     public function index()
     {
-        //
+        return view('coordinadores_index')->with('coordinadores', \App\Coordinador::all());
     }
 
     /**
@@ -25,8 +25,7 @@ class PostAgrCoordController extends Controller
      */
     public function create()
     {
-        //
-        return view('agrCoord.create');
+        return view('coordinadores_create');
     }
 
     /**
@@ -37,23 +36,22 @@ class PostAgrCoordController extends Controller
      */
     public function store(Request $request)
     {
-        // validate data
         $this->validate($request, array(
-                'nombre' => 'required',
-                'apellido_paterno' => 'required',
-                'apellido_materno' => 'required',
-                'escuela' => 'required',
-                'telefono' => 'required',
-                'email' => 'required'
-            ));
+            'nombre' => 'required',
+            'apellido_paterno' => 'required',
+            'apellido_materno' => 'required',
+            'escuela' => 'required',
+            'telefono' => 'required',
+            'email' => 'required'
+        ));
         // store data
         DB::table('coordinador')->insert([
-            'nombre' => $request->nombre,
-            'apellido_paterno' => $request->apellido_paterno,
-            'apellido_materno' => $request->apellido_materno,
-            'escuela' => $request->escuela,
-            'telefono' => $request->telefono,
-            'email' => $request->email
+                'nombre' => $request->nombre,
+                'apellido_paterno' => $request->apellido_paterno,
+                'apellido_materno' => $request->apellido_materno,
+                'escuela' => $request->escuela,
+                'telefono' => $request->telefono,
+                'email' => $request->email
             ]
         );
 
