@@ -29,57 +29,86 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="">
+                    {!! Form::open([
+                    'route' => 'agrCoord.store',
+                    'class' => 'form-horizontal'
+                    ]) !!}
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('nombre', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
+                                
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Name" class="col-md-4 control-label">Apellido paterno</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('apellido_paterno', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Apellido materno</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('apellido_materno', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Escuela</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('escuela', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Telefono</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('telefono', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Email</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+                                {!! Form::text('email', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Registrar
-                                </button>
+                                {!! Form::submit('Registrar', [
+                                    'class' => 'btn btn-primary'
+                                ]) !!}
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

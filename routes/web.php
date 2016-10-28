@@ -32,7 +32,7 @@ Route::get('/participa', function () {
 });
 Route::get('/coordinadores', function () {
     return view('coordinadores');
-});
+})->name('coordinadores');
 
 Route::get('/agregarCoordinador', function () {
     return view('agregarCoordinador');
@@ -53,3 +53,4 @@ Route::get('/donate', function()
 });
 
 Route::get('/gallery', 'HomeController@gallery');
+Route::resource('agrCoord','PostAgrCoordController');
