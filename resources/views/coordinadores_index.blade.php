@@ -42,7 +42,7 @@
                                                 <p>{{ $coordinador->nombre . ' ' . $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</p>
                                             </div>
                                             <div class="col-xs-2">
-                                                <button type="button" class="btn btn-warning">Modificar</button>
+                                                <button type="button" class="btn btn-info">Modificar</button>
                                             </div>
                                             <div class="col-xs-2">
                                                 <button type="button" class="btn btn-danger">Eliminar</button>
@@ -51,14 +51,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <div class="text-center">
-                                <ul class="pagination">
-                                    <li><a href="?p=0" data-original-title="" title="">1</a></li>
-                                    <li><a href="?p=1" data-original-title="" title="">2</a></li>
-                                    <li><a href="?p=1" data-original-title="" title="">3</a></li>
-                                </ul>
-                            </div>
-                            <a href="/agregarCoordinador" class="btn btn-primary pull-right">Agregar coordinador</a>
+                            <a href="{{ route('coordinadores.create') }}" class="btn btn-primary pull-right">Agregar coordinador</a>
                         </div>
                     </div>
                 </div>
