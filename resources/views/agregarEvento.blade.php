@@ -21,7 +21,7 @@
   <div class="container">
     <div class="page-header text-center">
             <h1>
-                Agregar coordinador
+                Agregar Evento
             </h1>
         </div>
   <div class="container">
@@ -30,7 +30,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     {!! Form::open([
-                    'route' => 'agrCoord.store',
+                    'route' => 'agrEvento.store',
                     'class' => 'form-horizontal'
                     ]) !!}
                         <div class="form-group">
@@ -47,9 +47,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Name" class="col-md-4 control-label">Apellido paterno</label>
+                            <label for="Name" class="col-md-4 control-label">Lugar</label>
                             <div class="col-md-6">
-                                {!! Form::text('apellido_paterno', '', [
+                                {!! Form::text('lugar', '', [
                                     'class' => 'form-control',
                                     'autofocus' => 'autofocus',
                                     'required' => 'required'
@@ -58,42 +58,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Apellido materno</label>
+                            <label for="name" class="col-md-4 control-label">Fecha</label>
                             <div class="col-md-6">
-                                {!! Form::text('apellido_materno', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
-                                    'required' => 'required'
-                                ]) !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Escuela</label>
-                            <div class="col-md-6">
-                                {!! Form::text('escuela', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
-                                    'required' => 'required'
-                                ]) !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Telefono</label>
-                            <div class="col-md-6">
-                                {!! Form::text('telefono', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
-                                    'required' => 'required'
-                                ]) !!}
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Email</label>
-                            <div class="col-md-6">
-                                {!! Form::text('email', '', [
+                                {!! Form::date('fecha', '', [
                                     'class' => 'form-control',
                                     'autofocus' => 'autofocus',
                                     'required' => 'required'

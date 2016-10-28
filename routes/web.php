@@ -38,6 +38,12 @@ Route::get('/agregarCoordinador', function () {
     return view('agregarCoordinador');
 
 });
+
+Route::get('/agregarEvento', function () {
+    return view('agregarEvento');
+
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -54,3 +60,4 @@ Route::get('/donate', function()
 
 Route::get('/gallery', 'HomeController@gallery');
 Route::resource('agrCoord','PostAgrCoordController');
+Route::resource('agrEvento','EventoController');
