@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('gallery');
+    return view('home');
 });
 
 Route::get('/contacto', function () {
@@ -34,7 +34,6 @@ Route::get('/coordinadores', function () {
     return view('coordinadores');
 })->name('coordinadores');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -51,9 +50,7 @@ Route::get('/donate', function()
 
 Route::get('/gallery', 'HomeController@gallery');
 Route::resource('agrCoord','PostAgrCoordController');
-
-
-
 Route::get('/coordinadores', 'CoordinadorController@index')->name('coordinadores.index');
 Route::get('/coordinadores/store', 'CoordinadorController@create')->name('coordinadores.create');
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
+
