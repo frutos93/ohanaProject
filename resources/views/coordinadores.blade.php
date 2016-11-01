@@ -19,6 +19,9 @@
     }
 </style>
 
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+
 <link href="css/app.css" rel="stylesheet">
 
   <!-- Gallery container -->
@@ -31,6 +34,27 @@
   <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+
+            <table id="table_id" class="display">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <th>1</th>
+                        <th>Tony</th>
+                        <th>Correo</th>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+
             <div class="panel panel-default">
                 <div class="panel-heading">Haga clic en la opcion que desee</div>
                 <div class="panel-body">
@@ -79,6 +103,9 @@
             </div>
         </div>
     </div>
+
+
+    <script src="js/showDataTable.js"></script>
 
 
 @endsection

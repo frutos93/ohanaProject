@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -30,13 +30,21 @@ Route::get('/eventos', function(){
 Route::get('/participa', function () {
     return view('ParticipaConNosotros');
 });
+
+Route::get('/agregarVoluntario', function () {
+    return view('agregarVoluntario');
+});
+
+Route::get('/agregarParticipante', function () {
+    return view('agregarParticipante');
+});
+
 Route::get('/coordinadores', function () {
     return view('coordinadores');
 })->name('coordinadores');
 
 Route::get('/agregarCoordinador', function () {
     return view('agregarCoordinador');
-
 });
 
 Route::get('/agregarEvento', function () {
@@ -60,4 +68,7 @@ Route::get('/donate', function()
 
 Route::get('/gallery', 'HomeController@gallery');
 Route::resource('agrCoord','PostAgrCoordController');
+Route::resource('voluntContr','VoluntarioController');
+Route::post('something', 'VoluntarioController@method')->name('voluntContr.something');;
+Route::resource('participContr','ParticipanteController');
 Route::resource('agrEvento','EventoController');
