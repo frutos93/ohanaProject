@@ -43,14 +43,6 @@ Route::get('/coordinadores', function () {
     return view('coordinadores');
 })->name('coordinadores');
 
-Route::get('/agregarCoordinador', function () {
-    return view('agregarCoordinador');
-});
-
-Route::get('/agregarEvento', function () {
-    return view('agregarEvento');
-
-});
 
 Auth::routes();
 
@@ -72,3 +64,6 @@ Route::resource('voluntContr','VoluntarioController');
 Route::post('something', 'VoluntarioController@method')->name('voluntContr.something');;
 Route::resource('participContr','ParticipanteController');
 Route::resource('agrEvento','EventoController');
+Route::get('/coordinadores', 'CoordinadorController@index')->name('coordinadores.index');
+Route::get('/coordinadores/store', 'CoordinadorController@create')->name('coordinadores.create');
+Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
