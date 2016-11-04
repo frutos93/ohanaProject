@@ -30,7 +30,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             {!! Form::open([
-                            'route' => 'coordinadores.store',
+                            'route' => 'coordinador.store',
                             'method' => 'POST',
                             'class' => 'form-horizontal'
                             ]) !!}
@@ -111,6 +111,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 @endsection
