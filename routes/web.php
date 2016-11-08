@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -30,9 +30,19 @@ Route::get('/eventos', function(){
 Route::get('/participa', function () {
     return view('ParticipaConNosotros');
 });
+
+Route::get('/agregarVoluntario', function () {
+    return view('agregarVoluntario');
+});
+
+Route::get('/agregarParticipante', function () {
+    return view('agregarParticipante');
+});
+
 Route::get('/coordinadores', function () {
     return view('coordinadores');
 })->name('coordinadores');
+
 
 Auth::routes();
 
@@ -50,9 +60,14 @@ Route::get('/donate', function()
 
 Route::get('/gallery', 'HomeController@gallery');
 Route::resource('agrCoord','PostAgrCoordController');
+Route::resource('voluntContr','VoluntarioController');
+Route::post('something', 'VoluntarioController@method')->name('voluntContr.something');;
+Route::resource('participContr','ParticipanteController');
+Route::resource('agrEvento','EventoController');
 Route::get('/coordinadores', 'CoordinadorController@index')->name('coordinadores.index');
 Route::get('/coordinadores/store', 'CoordinadorController@create')->name('coordinadores.create');
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
+
 Route::get('contacto',
   ['as' => 'contact', 'uses' => 'ContactController@create']);
 Route::post('contacto',
