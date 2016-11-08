@@ -29,8 +29,10 @@ return [
     |
     */
 
+    /*
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-
+    */
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -42,6 +44,7 @@ return [
     |
     */
 
+    //'port' => env('MAIL_PORT', 587),
     'port' => env('MAIL_PORT', 587),
 
     /*
@@ -56,8 +59,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => 'hugo.leon.ga@gmail.com',
+        'name' => 'Ohana.org.mx',
     ],
 
     /*
@@ -71,6 +74,7 @@ return [
     |
     */
 
+    //'encryption' => env('MAIL_ENCRYPTION', 'tls'),
     'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
@@ -111,5 +115,7 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+
+    'pretend' => false,
 
 ];

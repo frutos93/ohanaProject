@@ -53,4 +53,11 @@ Route::resource('agrCoord','PostAgrCoordController');
 Route::get('/coordinadores', 'CoordinadorController@index')->name('coordinadores.index');
 Route::get('/coordinadores/store', 'CoordinadorController@create')->name('coordinadores.create');
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
-
+Route::get('contacto',
+  ['as' => 'contact', 'uses' => 'ContactController@create']);
+Route::post('contacto',
+  ['as' => 'contact_store', 'uses' => 'ContactController@store']);
+Route::get('test', function()
+{
+    dd(Config::get('mail'));
+});
