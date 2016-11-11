@@ -83,5 +83,17 @@ Route::get('/participantes/delete', 'ParticipanteController@delete')->name('part
 Route::get('/participantes/destroy', 'ParticipanteController@destroy')->name('participantes.destroy');
 
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
+<<<<<<< HEAD
 Route::post('/participantes', 'ParticipanteController@store')->name('participantes.store');
 Route::post('/voluntarios', 'VoluntarioController@store')->name('voluntarios.store');
+=======
+
+Route::get('contacto',
+  ['as' => 'contact', 'uses' => 'ContactController@create']);
+Route::post('contacto',
+  ['as' => 'contact_store', 'uses' => 'ContactController@store']);
+Route::get('test', function()
+{
+    dd(Config::get('mail'));
+});
+>>>>>>> origin/dev
