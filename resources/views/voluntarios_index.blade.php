@@ -22,7 +22,7 @@
     <div class="container">
         <div class="page-header text-center">
             <h1>
-                Coordinadores
+                Voluntarios
             </h1>
         </div>
         <div class="container">
@@ -38,30 +38,26 @@
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
                                         <th>Escuela</th>
-                                        <th>Telefono</th>
-                                        <th>Email</th>
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($coordinadores as $coordinador)
+                                    @foreach($voluntarios as $voluntario)
                                         <tr>
-                                            <td>{{ $coordinador->nombre }}</td>
-                                            <td>{{ $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</td>
-                                            <td>{{ $coordinador->escuela }}</td>
-                                            <td>{{ $coordinador->telefono }}</td>
-                                            <td>{{ $coordinador->email }}</td>
+                                            <td>{{ $voluntario->nombre }}</td>
+                                            <td>{{ $voluntario->apellido_paterno . ' ' . $voluntario->apellido_materno }}</td>
+                                            <td>{{ $voluntario->escuela }}</td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.modify', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('voluntarios.modify', ['id' => $voluntario->id] ) }}">
                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.delete', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('voluntarios.delete', ['id' => $voluntario->id] ) }}">
                                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </div>
@@ -71,7 +67,7 @@
                                 </tbody>
                             </table>
                             <br>
-                            <a href="{{ route('coordinadores.create') }}" class="btn btn-success pull-right">Agregar coordinador</a>
+                            <a href="{{ route('voluntarios.create') }}" class="btn btn-success pull-right">Agregar voluntario</a>
                         </div>
                     </div>
                 </div>

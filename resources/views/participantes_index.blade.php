@@ -22,7 +22,7 @@
     <div class="container">
         <div class="page-header text-center">
             <h1>
-                Coordinadores
+                Participantes
             </h1>
         </div>
         <div class="container">
@@ -37,31 +37,43 @@
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
-                                        <th>Escuela</th>
-                                        <th>Telefono</th>
-                                        <th>Email</th>
+                                        <th>CURP</th>
+                                        <th>Casa hogar</th>
+                                        <th>Evento</th>
+                                        <th>Equipo</th>
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($coordinadores as $coordinador)
+                                    @foreach($participantes as $participante)
                                         <tr>
-                                            <td>{{ $coordinador->nombre }}</td>
-                                            <td>{{ $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</td>
-                                            <td>{{ $coordinador->escuela }}</td>
-                                            <td>{{ $coordinador->telefono }}</td>
-                                            <td>{{ $coordinador->email }}</td>
+                                            <td>{{ $participante->nombre }}</td>
+                                            <td>{{ $participante->apellido_paterno . ' ' . $participante->apellido_materno }}</td>
+                                            <td>{{ $participante->curp }}</td>
+                                            <td>{{ $participante->chnombre }}</td>
+                                            <td>{{ $participante->etnombre }}</td>
+                                            <td>{{ $participante->partequipo }}</td>
+                                            
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.modify', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('participantes.modify', [
+                                                    'id' => $participante->id,
+                                                    'eventoid' => $participante->etid,
+                                                    'participacionid' => $participante->partid,
+                                                    ] 
+                                                    ) }}">
                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.delete', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('participantes.delete', [
+                                                    'id' => $participante->id,
+                                                    'eventoid' => $participante->etid,
+                                                    'participacionid' => $participante->partid,
+                                                    ] ) }}">
                                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </div>
@@ -71,7 +83,7 @@
                                 </tbody>
                             </table>
                             <br>
-                            <a href="{{ route('coordinadores.create') }}" class="btn btn-success pull-right">Agregar coordinador</a>
+                            <a href="{{ route('participantes.create') }}" class="btn btn-success pull-right">Agregar participante</a>
                         </div>
                     </div>
                 </div>
