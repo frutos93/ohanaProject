@@ -76,3 +76,4 @@ Route::get('test', function()
 {
     dd(Config::get('mail'));
 });
+Route::get('/agregarEvento', 'EventoController@index');

@@ -69,6 +69,28 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Coordinador 1</label>
+                            <div class="col-md-6">
+                                {!! Form::date('fecha', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Coordinador 2</label>
+                            <div class="col-md-6">
+                                {!! Form::date('fecha', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 {!! Form::submit('Registrar', [
                                     'class' => 'btn btn-primary'

@@ -16,6 +16,8 @@ class EventoController extends Controller
     public function index()
     {
         //
+
+        return view('agregarEvento')->with('coordinadores', \App\Coordinador::all());
     }
 
     /**
