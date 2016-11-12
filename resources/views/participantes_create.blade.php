@@ -3,19 +3,16 @@
 
 
 @section('content')
-<!--
 
-	$user = DB::table('users')->where('name', 'Antonio')->first();
-	echo 'Mi email es: '.$user->email;
--->
+
+
 
 <style>
     .row a:hover{
         cursor: pointer;
     }
 </style>
-
-<link href="css/app.css" rel="stylesheet">
+  <link href="/css/app.css" rel="stylesheet">
 
   <!-- Gallery container -->
   <div class="container">
@@ -30,22 +27,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     {!! Form::open([
-                    'route' => 'participContr.store',
+                    'route' => 'participantes.store',
+                    'method' => 'POST',
                     'class' => 'form-horizontal'
                     ]) !!}
-
-                        <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">CURP</label>
-                            <div class="col-md-6">
-                                {!! Form::text('curp', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
-                                    'required' => 'required'
-                                ]) !!}
-                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
-
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
@@ -85,11 +70,50 @@
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Casa hogar</label>
                             <div class="col-md-6">
-                                {!! Form::text('casahogar_id', '', [
+                                    {{ Form::select('casahogar_id', $casashogares, 
+                                    null,
+                                    [
+                                        'class' => 'form-control    ',
+                                        'required' => 'required'
+                                    ]) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">CURP</label>
+                            <div class="col-md-6">
+                                {!! Form::text('curp', '', [
                                     'class' => 'form-control',
                                     'autofocus' => 'autofocus',
                                     'required' => 'required'
                                 ]) !!}
+                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Evento</label>
+                            <div class="col-md-6">
+                                    {{ Form::select('evento_id', $eventos, 
+                                    null,
+                                    [
+                                        'class' => 'form-control    ',
+                                        'required' => 'required'
+                                    ]) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Equipo</label>
+                            <div class="col-md-6">
+                                {!! Form::text('equipo', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
+
                             </div>
                         </div>
 
@@ -98,6 +122,9 @@
                                 {!! Form::submit('Registrar', [
                                     'class' => 'btn btn-primary'
                                 ]) !!}
+                                <a href="{{ route('participantes.index') }}">
+                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                </a>
                             </div>
                         </div>
                     {!! Form::close() !!}

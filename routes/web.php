@@ -31,13 +31,9 @@ Route::get('/participa', function () {
     return view('ParticipaConNosotros');
 });
 
-Route::get('/agregarVoluntario', function () {
-    return view('agregarVoluntario');
-});
-
-Route::get('/agregarParticipante', function () {
-    return view('agregarParticipante');
-});
+Route::get('/voluntarios', function () {
+    return view('voluntarios');
+})->name('voluntarios');
 
 Route::get('/coordinadores', function () {
     return view('coordinadores');
@@ -59,14 +55,36 @@ Route::get('/donate', function()
 });
 
 Route::get('/gallery', 'HomeController@gallery');
-Route::resource('agrCoord','PostAgrCoordController');
-Route::resource('voluntContr','VoluntarioController');
-Route::post('something', 'VoluntarioController@method')->name('voluntContr.something');;
-Route::resource('participContr','ParticipanteController');
+
 Route::resource('agrEvento','EventoController');
+
+// Routas para coordinadores
 Route::get('/coordinadores', 'CoordinadorController@index')->name('coordinadores.index');
 Route::get('/coordinadores/store', 'CoordinadorController@create')->name('coordinadores.create');
+Route::post('/coordinadores/update', 'CoordinadorController@update')->name('coordinadores.update');
+Route::get('/coordinadores/modify', 'CoordinadorController@modify')->name('coordinadores.modify');
+Route::get('/coordinadores/delete', 'CoordinadorController@delete')->name('coordinadores.delete');
+Route::get('/coordinadores/destroy', 'CoordinadorController@destroy')->name('coordinadores.destroy');
+
+// Routas para voluntarios
+Route::get('/voluntarios', 'VoluntarioController@index')->name('voluntarios.index');
+Route::get('/voluntarios/store', 'VoluntarioController@create')->name('voluntarios.create');
+Route::post('/voluntarios/update', 'VoluntarioController@update')->name('voluntarios.update');
+Route::get('/voluntarios/modify', 'VoluntarioController@modify')->name('voluntarios.modify');
+Route::get('/voluntarios/delete', 'VoluntarioController@delete')->name('voluntarios.delete');
+Route::get('/voluntarios/destroy', 'VoluntarioController@destroy')->name('voluntarios.destroy');
+
+// Routas para participantes
+Route::get('/participantes', 'ParticipanteController@index')->name('participantes.index');
+Route::get('/participantes/store', 'ParticipanteController@create')->name('participantes.create');
+Route::post('/participantes/update', 'ParticipanteController@update')->name('participantes.update');;
+Route::get('/participantes/modify', 'ParticipanteController@modify')->name('participantes.modify');
+Route::get('/participantes/delete', 'ParticipanteController@delete')->name('participantes.delete');
+Route::get('/participantes/destroy', 'ParticipanteController@destroy')->name('participantes.destroy');
+
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
+Route::post('/participantes', 'ParticipanteController@store')->name('participantes.store');
+Route::post('/voluntarios', 'VoluntarioController@store')->name('voluntarios.store');
 
 Route::get('contacto',
   ['as' => 'contact', 'uses' => 'ContactController@create']);
