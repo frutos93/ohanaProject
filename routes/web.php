@@ -103,3 +103,17 @@ Route::get('/evento/{id}', 'EventoController@show')->name('evento.show');
 Route::get('/evento/{id}/edit', 'EventoController@edit')->name('evento.edit');
 Route::put('/evento/{id}', 'EventoController@update')->name('evento.update');
 Route::delete('/evento/{id}', 'EventoController@destroy')->name('evento.destroy');
+
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::put('/profile', 'ProfileController@update')->name('profile.update');
+
+
+Route::get('/admin_galeria', 'GaleriaController@index')->name('admin_galeria.index');
+Route::get('/admin_galeria/create', 'GaleriaController@create')->name('admin_galeria.create');
+Route::post('/admin_galeria', 'GaleriaController@store')->name('admin_galeria.store');
+Route::get('/admin_galeria/{id}/edit', 'GaleriaController@edit')->name('admin_galeria.edit');
+Route::put('/admin_galeria/{id}', 'GaleriaController@update')->name('admin_galeria.update');
+
+
+Route::post('/image', 'GaleriaController@uploadImage')->name('image.upload');

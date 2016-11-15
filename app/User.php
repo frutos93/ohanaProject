@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -26,4 +26,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function perfil(){
+        if($this->rol == 1){
+            return $this->hasOne('App\\Director', "perfil_id");
+        }
+        return $this->hasOne('App\\Coordinador', "perfil_id");
+    }
 }
