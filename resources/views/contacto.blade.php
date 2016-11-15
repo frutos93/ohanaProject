@@ -158,7 +158,7 @@
     {!! Form::text('name', null,
         array('required',
               'class'=>'form-control',
-              'placeholder'=>'Your name')) !!}
+              'placeholder'=>'Nombre')) !!}
 </div>
 
 <div class="form-group">
@@ -166,7 +166,7 @@
     {!! Form::text('email', null,
         array('required',
               'class'=>'form-control',
-              'placeholder'=>'Your e-mail address')) !!}
+              'placeholder'=>'Correo electrónico')) !!}
 </div>
 
 <div class="form-group">
@@ -174,7 +174,7 @@
     {!! Form::textarea('message', null,
         array('required',
               'class'=>'form-control',
-              'placeholder'=>'Your message')) !!}
+              'placeholder'=>'Mensaje')) !!}
 </div>
 
 <div class="form-group">
