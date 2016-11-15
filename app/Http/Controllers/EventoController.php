@@ -16,8 +16,8 @@ class EventoController extends Controller
     public function index()
     {
         //
-
-        return view('agregarEvento')->with('coordinadores', \App\Coordinador::all());
+        $coordinadores = \App\Coordinador::all()::all()->pluck('nombre', 'id');
+        return view('agregarEvento')->with('coordinadores', $coordinadores);
     }
 
     /**

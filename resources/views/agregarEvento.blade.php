@@ -71,20 +71,23 @@
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Coordinador 1</label>
                             <div class="col-md-6">
-                                {!! Form::date('fecha', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
+                                {{ Form::select('coordinador_id', $coordinadores,
+                                null,
+                                [
+                                    'class' => 'form-control    ',
                                     'required' => 'required'
-                                ]) !!}
+                                ]) }}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Coordinador 2</label>
                             <div class="col-md-6">
-                                {!! Form::date('fecha', '', [
-                                    'class' => 'form-control',
-                                    'autofocus' => 'autofocus',
+
+                                {!! Form::select('coordinador_id', array($coordinadores),
+                                null,
+                                [
+                                    'class' => 'form-control    ',
                                     'required' => 'required'
                                 ]) !!}
                             </div>
