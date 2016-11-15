@@ -8,6 +8,12 @@ use App\Http\Requests;
 Use DB;
 class VoluntarioController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
