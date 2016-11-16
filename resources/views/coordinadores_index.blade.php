@@ -28,29 +28,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">Haga clic en la opcion que desee</div>
-                        <div class="panel-body">
-<<<<<<< HEAD
-                            <ul class="list-group">
-                                @foreach($coordinadores as $coordinador)
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-xs-8">
-                                                <p>{{ $coordinador->nombre . ' ' . $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</p>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <button type="button" class="btn btn-info">Modificar</button>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <button type="button" class="btn btn-danger">Eliminar</button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <a href="{{ route('coordinador.create') }}" class="btn btn-primary pull-right">Agregar
-                                coordinador</a>
-=======
-
+                        <div class="panel-body">    
                             <table id="table_id" class="display">
                                 <thead>
                                     <tr>
@@ -73,14 +51,14 @@
                                             <td>{{ $coordinador->email }}</td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.modify', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('coordinador.modify', ['id' => $coordinador->id] ) }}">
                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.delete', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('coordinador.delete', ['id' => $coordinador->id] ) }}">
                                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </div>
@@ -90,8 +68,7 @@
                                 </tbody>
                             </table>
                             <br>
-                            <a href="{{ route('coordinadores.create') }}" class="btn btn-success pull-right">Agregar coordinador</a>
->>>>>>> origin/dev
+                            <a href="{{ route('coordinador.create') }}" class="btn btn-success pull-right">Agregar coordinador</a>
                         </div>
                     </div>
                 </div>
