@@ -3,11 +3,6 @@
 
 
 @section('content')
-<!--
-
-	$user = DB::table('users')->where('name', 'Antonio')->first();
-	echo 'Mi email es: '.$user->email;
--->
 
 <style>
     .row a:hover{

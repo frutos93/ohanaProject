@@ -20,7 +20,7 @@
                 </h2>
                 <br>
                 <h4>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    - Dentro de las 31 Entidades federativas de México, existe un total de 93, 616 escuelas Primarias.
                 </h4>
             </div>
         </div>
@@ -37,7 +37,7 @@
                     Tecnologia
                 </h2>
                 <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                    
                 </p>
             </div>
             <div class="col-md-4 text-center">
@@ -46,7 +46,7 @@
                     Trabajo
                 </h2>
                 <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                    
                 </p>
             </div>
             <div class="col-md-4 text-center">
@@ -56,7 +56,7 @@
                     Educacion
                 </h2>
                 <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.
+                    
                 </p>
                 
             </div>
@@ -73,13 +73,29 @@
             </div>
             <div class="col-md-7">
                 <h2>
-                Nuestro trabajo es:
+                Cómo operamos:
                 </h2>
                 <br>
                 <ul>
-                  <li><h4>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh<h4></li><br>
-                  <li><h4>tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod<h4></li><br>
-                  <li><h4>tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod<h4></li><br>
+                  <li><h4>Formada por una mesa directiva, un consejo y grupos estudiantiles, en conjunto trabajamos para desarrollar proyectos, ideas y actividades con nuestros voluntarios y niños.<h4></li><br>
+                
+            </div>
+            <div class="col-md-7">
+                <h2>
+                Dónde trabajamos:
+                </h2>
+                <br>
+                <ul>
+                  <li><h4>Trabajamos en distintas sedes estudiantiles, de la Universidad Autónoma de Nuevo León y del Tecnológico de Monterrey.<h4></li><br>
+                </ul>
+            </div>
+            <div class="col-md-7" >
+                <h2>
+                Equipo:
+                </h2>
+                <br>
+                <ul>
+                  <li><h4>Nuestro equipo de trabajo está conformado por directores especializados en distintas áreas laborales y en conjunto formamos gabinetes de trabajo.<h4></li><br>
                 </ul>
             </div>
         </div>

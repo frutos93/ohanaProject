@@ -12,15 +12,17 @@
             z-index: 10;
         }
     </style>
+
     <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
+
     <link href="css/app.css" rel="stylesheet">
 
     <!-- Gallery container -->
     <div class="container">
         <div class="page-header text-center">
             <h1>
-                Coordinadores
+                Participantes
             </h1>
         </div>
         <div class="container">
@@ -29,58 +31,49 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Haga clic en la opcion que desee</div>
                         <div class="panel-body">
-<<<<<<< HEAD
-                            <ul class="list-group">
-                                @foreach($coordinadores as $coordinador)
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-xs-8">
-                                                <p>{{ $coordinador->nombre . ' ' . $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</p>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <button type="button" class="btn btn-info">Modificar</button>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <button type="button" class="btn btn-danger">Eliminar</button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <a href="{{ route('coordinador.create') }}" class="btn btn-primary pull-right">Agregar
-                                coordinador</a>
-=======
 
                             <table id="table_id" class="display">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
-                                        <th>Escuela</th>
-                                        <th>Telefono</th>
-                                        <th>Email</th>
+                                        <th>CURP</th>
+                                        <th>Casa hogar</th>
+                                        <th>Evento</th>
+                                        <th>Equipo</th>
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($coordinadores as $coordinador)
+                                    @foreach($participantes as $participante)
                                         <tr>
-                                            <td>{{ $coordinador->nombre }}</td>
-                                            <td>{{ $coordinador->apellido_paterno . ' ' . $coordinador->apellido_materno }}</td>
-                                            <td>{{ $coordinador->escuela }}</td>
-                                            <td>{{ $coordinador->telefono }}</td>
-                                            <td>{{ $coordinador->email }}</td>
+                                            <td>{{ $participante->nombre }}</td>
+                                            <td>{{ $participante->apellido_paterno . ' ' . $participante->apellido_materno }}</td>
+                                            <td>{{ $participante->curp }}</td>
+                                            <td>{{ $participante->chnombre }}</td>
+                                            <td>{{ $participante->etnombre }}</td>
+                                            <td>{{ $participante->partequipo }}</td>
+                                            
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.modify', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('participantes.modify', [
+                                                    'id' => $participante->id,
+                                                    'eventoid' => $participante->etid,
+                                                    'participacionid' => $participante->partid,
+                                                    ] 
+                                                    ) }}">
                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('coordinadores.delete', ['id' => $coordinador->id] ) }}">
+                                                    <a href="{{ route('participantes.delete', [
+                                                    'id' => $participante->id,
+                                                    'eventoid' => $participante->etid,
+                                                    'participacionid' => $participante->partid,
+                                                    ] ) }}">
                                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </div>
@@ -90,14 +83,11 @@
                                 </tbody>
                             </table>
                             <br>
-                            <a href="{{ route('coordinadores.create') }}" class="btn btn-success pull-right">Agregar coordinador</a>
->>>>>>> origin/dev
+                            <a href="{{ route('participantes.create') }}" class="btn btn-success pull-right">Agregar participante</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
             <script src="js/showDataTable.js"></script>
 

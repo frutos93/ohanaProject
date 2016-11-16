@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 Use DB;
 class CoordinadorController extends Controller
 {
 
+<<<<<<< HEAD
     /**
      * Create a new controller instance.
      *
@@ -19,6 +20,14 @@ class CoordinadorController extends Controller
     }
 
 
+=======
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+>>>>>>> origin/dev
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +46,38 @@ class CoordinadorController extends Controller
     public function create()
     {
         return view('coordinadores_create');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function modify()
+    {
+        $miId = Input::get('id');
+        $coord = DB::table('coordinador')->where('id', $miId)->first();
+    
+        if(is_null($coord))
+            return $this->  index();
+        else
+            return view('coordinadores_modify')->with('coordinador', $coord);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete()
+    {
+        $miId = Input::get('id');
+        $coord = DB::table('coordinador')->where('id', $miId)->first();
+    
+        if(is_null($coord))
+            return $this->  index();
+        else
+            return view('coordinadores_delete')->with('coordinador', $coord);
     }
 
     /**
@@ -98,9 +139,31 @@ class CoordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'nombre' => 'required',
+            'apellido_paterno' => 'required',
+            'apellido_materno' => 'required',
+            'escuela' => 'required',
+            'telefono' => 'required',
+            'email' => 'required'
+        ));
+        // update data
+
+        DB::table('coordinador')
+            ->where('id', $request->id)
+            ->update([
+                'nombre' => $request->nombre,
+                'apellido_paterno' => $request->apellido_paterno,
+                'apellido_materno' => $request->apellido_materno,
+                'escuela' => $request->escuela,
+                'telefono' => $request->telefono,
+                'email' => $request->email
+                ]);
+
+        // redirect to another page
+        return redirect()->route('coordinadores.index');
     }
 
     /**
@@ -109,8 +172,9 @@ class CoordinadorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        DB::table('coordinador')->where('id', '=', $request->id)->delete();
+        return redirect()->route('coordinadores.index');
     }
 }

@@ -29,6 +29,15 @@
             background-color: white;
             border-radius: 20px;
             font-size: 30px;
+
+        .wrapper {
+             text-align: center;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+        }
         }
 
 
@@ -41,38 +50,88 @@
     <h1 align="center">Eventos</h1>
     <table align="center" class="roundTable">
         <tr>
-            <th class="nombreEvento">Ohana Fest</th>
+            <th class="nombreEvento">Campamento Ohana</th>
         </tr>
-        <tr>
-            <th class="titulo">Fecha</th>
-        </tr>
-        <tr>
-            <td class="info">Junio 26, 2016</td>
-        </tr>
-        <tr>
-            <th class="titulo">Ubicación</th>
-        </tr>
-        <tr>
-            <td class="info" >Parque Fundidora</td>
-        </tr>
-        <tr>
+        
             <th class="titulo">Detalles</th>
         </tr>
         <tr>
-            <td class="info">PLorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-        </tr>
-        <th class="titulo">Costo</th>
+            <td class="info">Campamento de verano donde replicamos un modelo de desarrollo de competencias, consolidado por el aprendizaje conjunto e incluyente de las diferentes comunidades e instituciones del país.</td>
         </tr>
         <tr>
-            <td class="info">$100</td>
+            <td class="info">Alcance-100 niños en cada edición,dirigido a niños de casas hogar y situaciones vulnerables. Entre los 6 y los 12 años.</td>
         </tr>
-        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
-            </tr>
 
+
+        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
+        </tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    <table align="center" class="roundTable">
+        <tr>
+            <th class="nombreEvento">Verano Ohana</th>
+        </tr>
+        
+            <th class="titulo">Detalles</th>
+        </tr>
+        <tr>
+            <td class="info">Campamento de verano donde tiene como objetivo formar niños como agentes de cambio, consolidado por el aprendizaje conjunto e incluyente de las diferentes comunidades e instituciones del país</td>
+        </tr>
+        <tr>
+            <td class="info">Alcance-100 niños en cada edición,dirigido a niños de casas hogar y situaciones vulnerables. Entre los 6 y los 12 años.</td>
+        </tr>
+
+
+        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
+        </tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    <table align="center" class="roundTable">
+        <tr>
+            <th class="nombreEvento">Ohanapoly</th>
+        </tr>
+        
+            <th class="titulo">Detalles</th>
+        </tr>
+        <tr>
+            <td class="info">Con este evento buscamos expandir los horizontes de los niños, mostrándoles otros países y culturas para así despertar su interés por aprender cosas nuevas y diferentes a las que ven en México, además de ubicarse a sí mismos como ciudadanos de entorno globalizado. Además este evento tiene un enfoque artístico por lo que les enseñamos sobre el arte y la cultura de distintos países.</td>
+        </tr>
+        <tr>
+            <td class="info">Alcance - 50 niños por edición, dirigido a niños de casas hogar y situaciones vulnerables.</td>
+        </tr>
+
+
+        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
+        </tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    <table align="center" class="roundTable">
+        <tr>
+            <th class="nombreEvento">Ohana Inc.</th>
+        </tr>
+        
+            <th class="titulo">Detalles</th>
+        </tr>
+        <tr>
+            <td class="info">Con este evento buscamos fomentar el emprendimiento, la creatividad, el trabajo en equipo y la comunicación. Los niños en equipo emprenden y desarrollan su propia empresa, aprendiendo sobre la ecología y produciendo así productos con material reciclado, así mismo los concientizamos sobre la ecología.</td>
+        </tr>
+        <tr>
+            <td class="info">Alcance - 50 niños por edición, dirigido a niños de casas hogar y situaciones vulnerables entre los 7 y los 12 años.</td>
+        </tr>
+
+
+        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
+        </tr>
+        
     </table>
 </div>
 

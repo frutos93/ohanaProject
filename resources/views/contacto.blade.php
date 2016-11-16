@@ -145,29 +145,42 @@
             color: #888;
         }
     </style>
-<div class="container">
-    <form id="contact" action="" method="post">
-        <h3>Contacto</h3>
-        <h4>Llena esta forma para contactarnos</h4>
-        <fieldset>
-            <input placeholder="Tu Nombre" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Apellido" type="email" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Correo Electrónico" type="tel" tabindex="3" required>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Tu Número Telefónico (opcional)" type="url" tabindex="4" required>
-        </fieldset>
-        <fieldset>
-            <textarea placeholder="Tu Mensaje" tabindex="5" required></textarea>
-        </fieldset>
-        <fieldset>
-            <button name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
-        </fieldset>
-    </form>
+<ul>
+    @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+
+{!! Form::open(array('route' => 'contact_store', 'class' => 'form')) !!}
+
+<div class="form-group">
+    {!! Form::label('Nombre') !!}
+    {!! Form::text('name', null,
+        array('required',
+              'class'=>'form-control',
+              'placeholder'=>'Nombre')) !!}
 </div>
+
+<div class="form-group">
+    {!! Form::label('E-Mail') !!}
+    {!! Form::text('email', null,
+        array('required',
+              'class'=>'form-control',
+              'placeholder'=>'Correo electrónico')) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('Mensaje') !!}
+    {!! Form::textarea('message', null,
+        array('required',
+              'class'=>'form-control',
+              'placeholder'=>'Mensaje')) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::submit('Contáctanos!',
+      array('class'=>'btn btn-primary')) !!}
+</div>
+{!! Form::close() !!}
 
 @endsection

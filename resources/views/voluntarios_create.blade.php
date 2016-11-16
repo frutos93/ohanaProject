@@ -15,7 +15,7 @@
     }
 </style>
 
-<link href="css/app.css" rel="stylesheet">
+  <link href="/css/app.css" rel="stylesheet">
 
   <!-- Gallery container -->
   <div class="container">
@@ -30,7 +30,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     {!! Form::open([
-                    'route' => 'voluntContr.store',
+                    'route' => 'voluntarios.store',
                     'class' => 'form-horizontal'
                     ]) !!}
                         <div class="form-group">
@@ -82,8 +82,11 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 {!! Form::submit('Registrar', [
-                                    'class' => 'btn btn-primary'
+                                    'class' => 'btn btn-success'
                                 ]) !!}
+                                <a href="{{ route('voluntarios.index') }}">
+                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                </a>
                             </div>
                         </div>
                     {!! Form::close() !!}

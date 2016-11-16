@@ -31,13 +31,9 @@ Route::get('/participa', function () {
     return view('ParticipaConNosotros');
 });
 
-Route::get('/agregarVoluntario', function () {
-    return view('agregarVoluntario');
-});
-
-Route::get('/agregarParticipante', function () {
-    return view('agregarParticipante');
-});
+Route::get('/voluntarios', function () {
+    return view('voluntarios');
+})->name('voluntarios');
 
 
 Auth::routes();
@@ -55,14 +51,8 @@ Route::get('/donate', function()
 });
 
 Route::get('/gallery', 'HomeController@gallery');
-Route::resource('agrCoord','PostAgrCoordController');
-Route::resource('voluntContr','VoluntarioController');
-Route::post('something', 'VoluntarioController@method')->name('voluntContr.something');;
-Route::resource('participContr','ParticipanteController');
+
 Route::resource('agrEvento','EventoController');
-
-
-
 
 Route::get('/coordinador', 'CoordinadorController@index')->name('coordinador.index');
 Route::get('/coordinador/create', 'CoordinadorController@create')->name('coordinador.create');
@@ -117,3 +107,17 @@ Route::put('/admin_galeria/{id}', 'GaleriaController@update')->name('admin_galer
 
 
 Route::post('/image', 'GaleriaController@uploadImage')->name('image.upload');
+
+Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
+Route::post('/participantes', 'ParticipanteController@store')->name('participantes.store');
+Route::post('/voluntarios', 'VoluntarioController@store')->name('voluntarios.store');
+
+Route::get('contacto',
+  ['as' => 'contact', 'uses' => 'ContactController@create']);
+Route::post('contacto',
+  ['as' => 'contact_store', 'uses' => 'ContactController@store']);
+Route::get('test', function()
+{
+    dd(Config::get('mail'));
+});
+Route::get('/agregarEvento', 'EventoController@index');
