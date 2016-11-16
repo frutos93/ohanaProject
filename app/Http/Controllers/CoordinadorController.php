@@ -9,25 +9,12 @@ Use DB;
 class CoordinadorController extends Controller
 {
 
-<<<<<<< HEAD
-    /**
-     * Create a new controller instance.
-     *
-     */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
-
-
-=======
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
->>>>>>> origin/dev
     /**
      * Display a listing of the resource.
      *
