@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
 Use DB;
 class EventoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,15 +22,23 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //
-        $coordinadores = DB::table('coordinador')
-          ->select(DB::raw("CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) AS nombre, id"))
-          ->pluck('nombre', 'id');
-        //\App\Coordinador::all()->pluck('apellido_paterno','nombre', 'id');
-        //$coordinador_nombre = \App\Coordinador::all()->pluck('nombre', 'id');
-        //$coordinador_apellido = \App\Coordinador::all()->pluck('apellido_paterno', 'id');
-        //$coordinadores = $coordinador_nombre . ' ' . $coordinador_apellido;
-        return view('agregarEvento')->with('coordinadores', $coordinadores);
+
+        if(Auth()->user()->rol == 2) {
+            return view('/home');
+        }
+
+        $eventos =
+        DB::table('evento')
+            ->join('coordina_evento', 'evento.id', '=', 'coordina_evento.evento_id')
+            ->join('coordinador', 'coordina_evento.coordinador_id', '=', 'coordinador.id')
+            ->select('evento.*', DB::raw("CONCAT(coordinador.nombre, ' ', coordinador.apellido_paterno, ' ', coordinador.apellido_materno) AS coorNombre"), 'coordina_evento.*',
+                'evento.id as eid','coordina_evento.id as ceid','coordinador.id as coorid')
+            ->get();
+
+        return view('evento_index')
+                ->with('eventos', $eventos);
+
+
     }
 
     /**
@@ -34,7 +49,15 @@ class EventoController extends Controller
     public function create()
     {
         //
-        return view('');
+        //
+        $coordinadores = DB::table('coordinador')
+          ->select(DB::raw("CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) AS nombre, id"))
+          ->pluck('nombre', 'id');
+        //\App\Coordinador::all()->pluck('apellido_paterno','nombre', 'id');
+        //$coordinador_nombre = \App\Coordinador::all()->pluck('nombre', 'id');
+        //$coordinador_apellido = \App\Coordinador::all()->pluck('apellido_paterno', 'id');
+        //$coordinadores = $coordinador_nombre . ' ' . $coordinador_apellido;
+        return view('agregarEvento')->with('coordinadores', $coordinadores);
     }
 
     /**

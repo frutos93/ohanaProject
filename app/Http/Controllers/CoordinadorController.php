@@ -44,7 +44,7 @@ class CoordinadorController extends Controller
     {
         $miId = Input::get('id');
         $coord = DB::table('coordinador')->where('id', $miId)->first();
-    
+
         if(is_null($coord))
             return $this->  index();
         else
@@ -60,7 +60,7 @@ class CoordinadorController extends Controller
     {
         $miId = Input::get('id');
         $coord = DB::table('coordinador')->where('id', $miId)->first();
-    
+
         if(is_null($coord))
             return $this->  index();
         else

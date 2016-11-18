@@ -128,6 +128,8 @@ Route::get('test', function()
 });
 Route::get('/agregarEvento', 'EventoController@index');
 
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 /*
 lo siento rob
 
@@ -154,5 +156,5 @@ Route::post('/voluntario', 'VoluntarioController@store')->name('voluntario.store
 Route::get('/voluntario/{id}', 'VoluntarioController@show')->name('voluntario.show');
 Route::get('/voluntario/{id}/edit', 'VoluntarioController@edit')->name('voluntario.edit');
 Route::put('/voluntario/{id}', 'VoluntarioController@update')->name('voluntario.update');
-Route::delete('/voluntario/{id}', 'VoluntarioController@destroy')->name('voluntario.destroy'); 
+Route::delete('/voluntario/{id}', 'VoluntarioController@destroy')->name('voluntario.destroy');
 */
