@@ -71,7 +71,8 @@
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Coordinador 1</label>
                             <div class="col-md-6">
-                                {{ Form::select('coordinador_id', $coordinadores,
+
+                                {{ Form::select('coordinador_1', $coordinadores,
                                 null,
                                 [
                                     'class' => 'form-control    ',
@@ -84,14 +85,15 @@
                             <label for="name" class="col-md-4 control-label">Coordinador 2</label>
                             <div class="col-md-6">
 
-                                {!! Form::select('coordinador_id', array($coordinadores),
+                                {{ Form::select('coordinador_2', $coordinadores,
                                 null,
                                 [
                                     'class' => 'form-control    ',
                                     'required' => 'required'
-                                ]) !!}
+                                ]) }}
                             </div>
                         </div>
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

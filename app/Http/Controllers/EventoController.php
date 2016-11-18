@@ -16,7 +16,13 @@ class EventoController extends Controller
     public function index()
     {
         //
-        $coordinadores = \App\Coordinador::all()::all()->pluck('nombre', 'id');
+        $coordinadores = DB::table('coordinador')
+          ->select(DB::raw("CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) AS nombre, id"))
+          ->pluck('nombre', 'id');
+        //\App\Coordinador::all()->pluck('apellido_paterno','nombre', 'id');
+        //$coordinador_nombre = \App\Coordinador::all()->pluck('nombre', 'id');
+        //$coordinador_apellido = \App\Coordinador::all()->pluck('apellido_paterno', 'id');
+        //$coordinadores = $coordinador_nombre . ' ' . $coordinador_apellido;
         return view('agregarEvento')->with('coordinadores', $coordinadores);
     }
 
