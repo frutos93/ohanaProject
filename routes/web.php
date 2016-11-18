@@ -27,6 +27,10 @@ Route::get('/eventos', function(){
     return view('eventos');
 });
 
+Route::get('/eventosDespues', function(){
+    return view('eventos2');
+});
+
 Route::get('/participa', function () {
     return view('participa');
 });
@@ -38,7 +42,9 @@ Route::get('/voluntarios', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', function () {
+    return view('home2');
+});
 
 Route::get('/about', function()
 {

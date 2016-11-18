@@ -29,6 +29,7 @@
             background-color: white;
             border-radius: 20px;
             font-size: 30px;
+        }
 
         .wrapper {
              text-align: center;
@@ -38,16 +39,17 @@
             position: absolute;
             top: 50%;
         }
-        }
 
 
 
 
     </style>
 
-
+<section id="eventos" class="content-blue">
 <div class="container">
-    <h1 align="center">Eventos</h1>
+    <div class="row page-header text-center">
+        <h1>Eventos</h1>
+    </div>
     <table align="center" class="roundTable">
         <tr>
             <th class="nombreEvento">Campamento Ohana</th>
@@ -62,9 +64,6 @@
             <td class="info">Alcance-100 niños en cada edición,dirigido a niños de casas hogar y situaciones vulnerables. Entre los 6 y los 12 años.</td>
         </tr>
 
-
-        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
-        </tr>
         
     </table>
     <br>
@@ -82,10 +81,6 @@
         </tr>
         <tr>
             <td class="info">Alcance-100 niños en cada edición,dirigido a niños de casas hogar y situaciones vulnerables. Entre los 6 y los 12 años.</td>
-        </tr>
-
-
-        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
         </tr>
         
     </table>
@@ -105,10 +100,6 @@
         <tr>
             <td class="info">Alcance - 50 niños por edición, dirigido a niños de casas hogar y situaciones vulnerables.</td>
         </tr>
-
-
-        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
-        </tr>
         
     </table>
     <br>
@@ -127,13 +118,10 @@
         <tr>
             <td class="info">Alcance - 50 niños por edición, dirigido a niños de casas hogar y situaciones vulnerables entre los 7 y los 12 años.</td>
         </tr>
-
-
-        <th id="button"> <button  name="Enviar" type="submit" id="contact-submit" data-submit="...Sending">Registrarse</button></t>
-        </tr>
         
     </table>
 </div>
+</section>
 
 
 @endsection

@@ -4,23 +4,27 @@
 
 <link href="css/app.css" rel="stylesheet">
 
-<section id="participa">
+<section id="participa-permanente" class="img-background">
     <div class="container">
-        <div class="page-header text-center">
+        <div class="row page-header text-center">
             <h1>
                 Voluntario permanente
             </h1>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center"> 
-                
+            <div class="col-md-12 text-center">
                 <br>
                 <h3>
                    En Ohana estamos buscando voluntarios comprometidos con crear un cambio, envíanos tus datos y buscaremos la mejor sede para ti.
                 </h3>
             </div>
         </div>
-        <div class="page-header text-center">
+    </div>
+</section>
+
+<section id="participa-unica" class="content-blue">
+    <div class="container">
+        <div class="row page-header text-center">
             <h2>
                 Actividad única
             </h2>
@@ -34,7 +38,12 @@
                 </h3>
             </div>
         </div>
-        <div class="page-header text-center">
+    </div>
+</section>
+
+<section id="participa-nueva" class="img-background">
+    <div class="container">
+        <div class="row page-header text-center">
             <h1>
                 Nueva alianza
             </h1>
@@ -48,7 +57,12 @@
                 </h3>
             </div>
         </div>
-        <div class="page-header text-center">
+    </div>
+</section>
+
+<section id="participa-capitulo" class="content-green">
+    <div class="container">
+        <div class="row page-header text-center">
             <h1>
                 Abrir un capítulo
             </h1>
@@ -62,14 +76,18 @@
                 </h3>
             </div>
         </div>
-        <div class="page-header text-center">
+    </div>
+</section>
+
+<section id="participa-empresa" class="img-background">
+    <div class="container">
+        <div class="row page-header text-center">
             <h1>
                 Empresa
             </h1>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center"> 
-                
+            <div class="col-md-12 text-center">
                 <br>
                 <h3>
                     Si eres una empresa y deseas participar con nosotros, envianos tus datos, nombre de la empresa, responsable, idea a desarrollar, etc...
@@ -77,8 +95,6 @@
                 </h3>
             </div>
         </div>
-        
-        
     </div>
 </section>
 

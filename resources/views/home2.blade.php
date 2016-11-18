@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-4 card">
                     <div class="card-block">
-                    <img class="img-rounded img-responsive center-block" src="assets/images/logo.png" alt="" style="width: 80%; height: auto">
+                    <img class="img-rounded img-responsive center-block hidden-lh" src="assets/images/logo.png" alt="" style="width: 80%; height: auto">
                     </div>
                 </div>
             </div>

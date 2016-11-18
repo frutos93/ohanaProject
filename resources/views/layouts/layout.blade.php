@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Ohana Inc.</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -15,6 +15,11 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 <style>
+
+    body {
+
+    }
+
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
         width: 60%;
@@ -27,7 +32,7 @@
         padding: 0;
     }
     .content-green {
-        background-color: #74B02B
+        background-color: #74B02B;
     }
     .content-blue {
         background-color: #3BA69E;
@@ -37,6 +42,12 @@
     }
     .rounded-border {
         border-radius: 20px;
+    }
+    .img-background {
+        background-image: url({{asset('assets/images/1.jpg')}});
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
     }
 </style>
 

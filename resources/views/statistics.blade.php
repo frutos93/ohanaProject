@@ -4,7 +4,7 @@
 
 <link href="css/app.css" rel="stylesheet">
 
-<section id="estadisticas">
+<section id="estadisticas" class="content-green">
     <div class="container">
         <div class="page-header text-center">
             <h1>
@@ -25,6 +25,9 @@
             </div>
         </div>
         <br>
+    </div>
+</section>
+<section id="actualidad">
         <div class="row">
             <div class="page-header text-center">
                     <h1>
@@ -62,6 +65,8 @@
             </div>
         </div>  
         <br>
+</section>
+<section id="ohamaCambio" class="content-blue">
         <div class="page-header text-center">
             <h1>
                 Ohana por el cambio
@@ -77,8 +82,8 @@
                 </h2>
                 <br>
                 <ul>
-                  <li><h4>Formada por una mesa directiva, un consejo y grupos estudiantiles, en conjunto trabajamos para desarrollar proyectos, ideas y actividades con nuestros voluntarios y niños.<h4></li><br>
-                
+                  <li><h4>Formada por una mesa directiva, un consejo y grupos estudiantiles, en conjunto trabajamos para desarrollar proyectos, ideas y actividades con nuestros voluntarios y niños.</h4></li><br>
+                </ul>
             </div>
             <div class="col-md-7">
                 <h2>
@@ -86,7 +91,7 @@
                 </h2>
                 <br>
                 <ul>
-                  <li><h4>Trabajamos en distintas sedes estudiantiles, de la Universidad Autónoma de Nuevo León y del Tecnológico de Monterrey.<h4></li><br>
+                  <li><h4>Trabajamos en distintas sedes estudiantiles, de la Universidad Autónoma de Nuevo León y del Tecnológico de Monterrey.</h4></li><br>
                 </ul>
             </div>
             <div class="col-md-7" >
@@ -95,7 +100,7 @@
                 </h2>
                 <br>
                 <ul>
-                  <li><h4>Nuestro equipo de trabajo está conformado por directores especializados en distintas áreas laborales y en conjunto formamos gabinetes de trabajo.<h4></li><br>
+                  <li><h4>Nuestro equipo de trabajo está conformado por directores especializados en distintas áreas laborales y en conjunto formamos gabinetes de trabajo.</h4></li><br>
                 </ul>
             </div>
         </div>
