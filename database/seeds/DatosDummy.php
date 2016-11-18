@@ -21,5 +21,6 @@ class DatosDummy extends Seeder
         factory(App\Participacion::class, 20)->create();
         factory(App\ParticipacionVoluntariado::class, 20)->create();
         factory(App\CoordinaEvento::class, 20)->create();
+        factory(App\User::class, 1)->create();
     }
 }
