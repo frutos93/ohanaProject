@@ -51,6 +51,7 @@ Route::get('/donate', function()
 });
 
 Route::get('/gallery', 'HomeController@gallery');
+Route::get('/gallery/{id}', 'HomeController@viewGallery')->name('gallery.view');
 
 Route::resource('agrEvento','EventoController');
 
@@ -110,13 +111,12 @@ Route::get('/admin_galeria/create', 'GaleriaController@create')->name('admin_gal
 Route::post('/admin_galeria', 'GaleriaController@store')->name('admin_galeria.store');
 Route::get('/admin_galeria/{id}/edit', 'GaleriaController@edit')->name('admin_galeria.edit');
 Route::put('/admin_galeria/{id}', 'GaleriaController@update')->name('admin_galeria.update');
-
-
-Route::post('/image', 'GaleriaController@uploadImage')->name('image.upload');
-
+Route::delete('/admin_galeria/{id}', 'GaleriaController@destroy')->name('admin_galeria.destroy');
 Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
 Route::post('/participantes', 'ParticipanteController@store')->name('participantes.store');
 Route::post('/voluntarios', 'VoluntarioController@store')->name('voluntarios.store');
+
+
 
 Route::get('contacto',
   ['as' => 'contact', 'uses' => 'ContactController@create']);

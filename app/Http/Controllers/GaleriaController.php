@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Imagen;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
@@ -8,7 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Response;
+
 
 class GaleriaController extends Controller
 {
@@ -56,24 +58,19 @@ class GaleriaController extends Controller
 
 
         $files_data = $request->get('files');
-        for($iter = 0 ; $iter < count(Input::file('input_files')); $iter++){
+        for ($iter = 0; $iter < count(Input::file('input_files')); $iter++) {
             $file = Input::file('input_files')[$iter];
             $extension = $file->extension();
             $directory = public_path() . '/uploads/';
             $filename = uniqid(time()) . ".{$extension}";
             $file->move($directory, $filename);
-
             Imagen::create([
-                'nombre' => $files_data['name'][$iter],
-                'descripcion' => $files_data['description'][$iter],
+                'nombre' => $files_data['nombre'][$iter],
+                'descripcion' => $files_data['descripcion'][$iter],
                 'galeria_id' => $id,
                 'url' => $filename
             ]);
         }
-        die();
-
-
-        
         // redirect to another page
         return redirect()->route('admin_galeria.index');
     }
@@ -120,7 +117,12 @@ class GaleriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            \App\Galeria::destroy($id);
+        } catch (\Exception $e) {
+            return Response::json(["success" => false], 400);
+        }
+        return Response::json(["success" => true], 200);
     }
 
     public function uploadImage(Request $request)
