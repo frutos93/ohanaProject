@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home2');
 })->name('home');
 
 Route::get('/contacto', function () {
@@ -28,7 +28,7 @@ Route::get('/eventos', function(){
 });
 
 Route::get('/participa', function () {
-    return view('ParticipaConNosotros');
+    return view('participa');
 });
 
 Route::get('/voluntarios', function () {
