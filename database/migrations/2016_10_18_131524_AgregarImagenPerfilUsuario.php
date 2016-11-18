@@ -14,7 +14,7 @@ class AgregarImagenPerfilUsuario extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->binary('profile_image')->nullable();
+            $table->string('profile_image')->nullable();
         });
     }
 

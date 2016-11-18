@@ -30,7 +30,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             {!! Form::open([
-                            'route' => 'coordinadores.store',
+                            'route' => 'coordinador.store',
                             'method' => 'POST',
                             'class' => 'form-horizontal'
                             ]) !!}
@@ -89,17 +89,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Email</label>
-                                <div class="col-md-6">
-                                    {!! Form::text('email', '', [
-                                        'class' => 'form-control',
-                                        'autofocus' => 'autofocus',
-                                        'required' => 'required'
-                                    ]) !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     {!! Form::submit('Registrar', [
                                         'class' => 'btn btn-success'
@@ -114,6 +103,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 @endsection

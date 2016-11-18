@@ -78,10 +78,8 @@ class CoordinadorController extends Controller
         $this->validate($request, array(
             'nombre' => 'required',
             'apellido_paterno' => 'required',
-            'apellido_materno' => 'required',
             'escuela' => 'required',
             'telefono' => 'required',
-            'email' => 'required'
         ));
         // store data
         DB::table('coordinador')->insert([
@@ -89,13 +87,12 @@ class CoordinadorController extends Controller
                 'apellido_paterno' => $request->apellido_paterno,
                 'apellido_materno' => $request->apellido_materno,
                 'escuela' => $request->escuela,
-                'telefono' => $request->telefono,
-                'email' => $request->email
+                'telefono' => $request->telefono
             ]
         );
 
         // redirect to another page
-        return redirect()->route('coordinadores.index');
+        return redirect()->route('coordinador.index');
     }
 
     /**
@@ -134,8 +131,7 @@ class CoordinadorController extends Controller
             'apellido_paterno' => 'required',
             'apellido_materno' => 'required',
             'escuela' => 'required',
-            'telefono' => 'required',
-            'email' => 'required'
+            'telefono' => 'required'
         ));
         // update data
 
@@ -145,9 +141,7 @@ class CoordinadorController extends Controller
                 'nombre' => $request->nombre,
                 'apellido_paterno' => $request->apellido_paterno,
                 'apellido_materno' => $request->apellido_materno,
-                'escuela' => $request->escuela,
-                'telefono' => $request->telefono,
-                'email' => $request->email
+                'escuela' => $request->escuela
                 ]);
 
         // redirect to another page

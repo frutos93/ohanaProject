@@ -10,7 +10,7 @@
     </style>
 
 
-    <link href="/css/app.css" rel="stylesheet">
+    {{ Html::style('css/app.css') }}
 
     <!-- Gallery container -->
     <div class="container">
@@ -19,25 +19,15 @@
                 Galería de fotos
             </h1>
         </div>
-        @foreach($galerias as $galeria)
-            <div class="col-lg-3 col-sm-4 col-xs-6 text-center">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>{{ $galeria->nombre }}</h4>
-                    </div>
+        <div class="row">
+            @foreach($galeria->imagenes as $imagen)
+                <div class="col-lg-3 col-sm-4 col-xs-6">
+                    <a data-toggle="modal" title="{{ $imagen->nombre }}">
+                        {{ Html::image('uploads/' . $imagen->url, '', ['class' => 'thumbnail img-responsive']) }}
+                    </a>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <a href="{{ route('gallery.view', ["id" => $galeria->id]) }}">
-                            {{ Html::image('uploads/' . $galeria->imagenes()->first()->url,  '', ['class' => 'img-responsive', 'style' => 'margin: 0 auto;']) }}
-                        </a>
-                    </div>
-                </div>
-                <br>
-            </div>
-        @endforeach
-
+            @endforeach
+        </div>
     </div>
 
 
@@ -68,4 +58,5 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     {{ Html::script('js/galleryModal.js') }}
+
 @endsection

@@ -100,18 +100,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="name" class="col-md-4 control-label">Email</label>
-                                <div class="col-md-6">
-                                    {!! Form::text('email', $coordinador->email, [
-                                        'class' => 'form-control',
-                                        'autofocus' => 'autofocus',
-                                        'required' => 'required',
-                                        'disabled' => 'disabled'
-                                    ]) !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     {!! Form::submit('Eliminar', [
                                         'class' => 'btn btn-danger'

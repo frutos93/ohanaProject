@@ -73,7 +73,6 @@ class VoluntarioController extends Controller
         $this->validate($request, array(
                 'nombre' => 'required',
                 'apellido_paterno' => 'required',
-                'apellido_materno' => 'required',
                 'escuela' => 'required',
             ));
 

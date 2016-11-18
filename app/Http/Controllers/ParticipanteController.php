@@ -110,7 +110,6 @@ class ParticipanteController extends Controller
                 'curp' => 'required',
                 'nombre' => 'required',
                 'apellido_paterno' => 'required',
-                'apellido_materno' => 'required',
                 'casahogar_id' => 'required',
                 'evento_id' => 'required',
                 'equipo' => 'required'

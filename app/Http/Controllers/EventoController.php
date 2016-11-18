@@ -16,7 +16,13 @@ class EventoController extends Controller
     public function index()
     {
         //
-        $coordinadores = \App\Coordinador::all()::all()->pluck('nombre', 'id');
+        $coordinadores = DB::table('coordinador')
+          ->select(DB::raw("CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) AS nombre, id"))
+          ->pluck('nombre', 'id');
+        //\App\Coordinador::all()->pluck('apellido_paterno','nombre', 'id');
+        //$coordinador_nombre = \App\Coordinador::all()->pluck('nombre', 'id');
+        //$coordinador_apellido = \App\Coordinador::all()->pluck('apellido_paterno', 'id');
+        //$coordinadores = $coordinador_nombre . ' ' . $coordinador_apellido;
         return view('agregarEvento')->with('coordinadores', $coordinadores);
     }
 
@@ -43,18 +49,33 @@ class EventoController extends Controller
         $this->validate($request, array(
                 'nombre' => 'required',
                 'fecha' => 'required',
-                'lugar' => 'required'
+                'lugar' => 'required',
+                'coordinador_1' => 'required',
+                'coordinador_2' => 'required'
             ));
         // store data
-        DB::table('evento')->insert([
+        $eventoID = DB::table('evento')->insertGetId([
             'nombre' => $request->nombre,
             'fecha' => $request->fecha,
-            'lugar' => $request->lugar
+            'lugar' => $request->lugar,
+            'creado_por' => 2 //cambiar por id del director que hizo login
+            ]
+        );
+
+        DB::table('coordina_evento')->insert([
+            'evento_id' => $eventoID,
+            'coordinador_id' => $request->coordinador_1
+            ]
+        );
+
+        DB::table('coordina_evento')->insert([
+            'evento_id' => $eventoID,
+            'coordinador_id' => $request->coordinador_2
             ]
         );
 
         // redirect to another page
-        return redirect()->route('coordinadores');
+        return redirect()->route('evento.index');
     }
 
     /**

@@ -95,7 +95,6 @@ $factory->define(App\Coordinador::class, function (Faker\Generator $faker) {
         'apellido_materno' => $faker->lastName,
         'escuela' => $faker->name,
         'telefono' => $faker->phoneNumber,
-        'email' => $faker->companyEmail,
     ];
 });
 
@@ -105,7 +104,6 @@ $factory->define(App\Director::class, function (Faker\Generator $faker) {
         'apellido_paterno' => $faker->firstName,
         'apellido_materno' => $faker->lastName,
         'telefono' => $faker->phoneNumber,
-        'email' => $faker->companyEmail,
     ];
 });
 

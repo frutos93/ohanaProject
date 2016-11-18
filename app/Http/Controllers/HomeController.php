@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+
     }
 
     /**
@@ -25,11 +25,15 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    
+
     public function gallery()
     {
-        return view('gallery');
+        return view('gallery')->with('galerias', \App\Galeria::all());
     }
-    
-    
+
+    public function viewGallery($id)
+    {
+        return view('view_gallery')->with('galeria', \App\Galeria::find($id));
+    }
+
 }

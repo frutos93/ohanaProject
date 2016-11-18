@@ -19,7 +19,6 @@ class CrearTablasCoordinadorDirectorCoordinaEvento extends Migration
             $table->string('apellido_paterno');
             $table->string('apellido_materno')->nullable();
             $table->string('telefono');
-            $table->string('email');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,7 +30,6 @@ class CrearTablasCoordinadorDirectorCoordinaEvento extends Migration
             $table->string('apellido_materno')->nullable();
             $table->string('escuela');
             $table->string('telefono');
-            $table->string('email');
             $table->softDeletes();
             $table->timestamps();
         });

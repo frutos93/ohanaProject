@@ -11,8 +11,7 @@ class Participante extends Model
     public function participaciones(){
         return $this->hasMany('App\\Participacion', 'participante_id');
     }
-
-
+    
     public function casahogar(){
         return $this->hasOne('App\\CasaHogar', "id", 'casahogar_id');
     }
