@@ -8,6 +8,13 @@ use App\Http\Requests;
 Use DB;
 class CoordinadorController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -71,7 +78,6 @@ class CoordinadorController extends Controller
         $this->validate($request, array(
             'nombre' => 'required',
             'apellido_paterno' => 'required',
-            'apellido_materno' => 'required',
             'escuela' => 'required',
             'telefono' => 'required',
             'email' => 'required'
@@ -88,7 +94,7 @@ class CoordinadorController extends Controller
         );
 
         // redirect to another page
-        return redirect()->route('coordinadores.index');
+        return redirect()->route('coordinador.index');
     }
 
     /**

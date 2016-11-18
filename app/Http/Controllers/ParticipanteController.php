@@ -8,6 +8,12 @@ use App\Http\Requests;
 Use DB;
 class ParticipanteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -104,7 +110,6 @@ class ParticipanteController extends Controller
                 'curp' => 'required',
                 'nombre' => 'required',
                 'apellido_paterno' => 'required',
-                'apellido_materno' => 'required',
                 'casahogar_id' => 'required',
                 'evento_id' => 'required',
                 'equipo' => 'required'

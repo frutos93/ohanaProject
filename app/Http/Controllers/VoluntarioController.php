@@ -8,6 +8,12 @@ use App\Http\Requests;
 Use DB;
 class VoluntarioController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -67,7 +73,6 @@ class VoluntarioController extends Controller
         $this->validate($request, array(
                 'nombre' => 'required',
                 'apellido_paterno' => 'required',
-                'apellido_materno' => 'required',
                 'escuela' => 'required',
             ));
 
