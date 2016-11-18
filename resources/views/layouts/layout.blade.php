@@ -17,7 +17,7 @@
 <style>
 
     body {
-
+        padding-top: 70px;
     }
 
     .carousel-inner > .item > img,

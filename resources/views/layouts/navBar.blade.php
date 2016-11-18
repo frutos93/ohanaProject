@@ -1,9 +1,15 @@
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/home"><img src="{{asset('assets/images/OhanaLogoo.png')}}"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navegacion">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home"><img src="{{asset('assets/images/OhanaLogoo.png')}}"></a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul id="navegacion" class="nav navbar-nav collapse navbar-collapse">
             <li class="active"><a href="/home">Ohana</a></li>
             <li><a href="/estadisticas">Datos de México</a></li>
             <li><a href="/gallery">Galeria</a></li>
