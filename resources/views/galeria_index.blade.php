@@ -19,13 +19,15 @@
             z-index: 10;
         }
     </style>
+    <script type="text/javascript" charset="utf8 " src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.css">
     <link href="css/app.css" rel="stylesheet">
 
     <!-- Gallery container -->
     <div class="container">
         <div class="page-header text-center">
             <h1>
-                Coordinadores
+                Galería
             </h1>
         </div>
         <div class="container">
@@ -34,25 +36,34 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Haga clic en la opcion que desee</div>
                         <div class="panel-body">
-                            <ul class="list-group" id="home-data-summary">
-                                @foreach($galerias as $galeria)
-                                    <li class="list-group-item" id="galeria-{{ $galeria->id }}">
-                                        <div class="row">
-                                            <div class="col-xs-8">
-                                                <p>{{ $galeria->nombre }}</p>
-                                            </div>
+                            <table id="table_id" class="display">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="home-data-summary">
+                                    @foreach($galerias as $galeria)
+                                    <tr>
+                                        <td>{{ $galeria->nombre }}</td>
+                                        <td>
                                             <div class="col-xs-2">
-                                                <a href="{{ route('admin_galeria.edit', ["id" => $galeria->id]) }}" class="btn btn-info">Modificar</a>
+                                                <a href="{{ route('admin_galeria.edit', ["id" => $galeria->id]) }}" class="btn btn-primary">Modificar</a>
                                             </div>
+                                        </td>
+                                        <td>
                                             <div class="col-xs-2">
                                                 <button type="button" data-name="{{ $galeria->nombre }}" data-content="{{ $galeria->id }}" class="btn-data-delete btn btn-danger">Eliminar</button>
                                             </div>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <a href="{{ route('admin_galeria.create') }}" class="btn btn-primary pull-right">Crear
-                                galeria</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <br>
+                            <a href="{{ route('admin_galeria.create') }}" class="btn btn-success pull-right">Crear galeria</a>
                         </div>
                     </div>
                 </div>
@@ -81,6 +92,7 @@
         });
     });
 </script>
+<script src="js/showDataTable.js"></script>
 
 @endsection
 
