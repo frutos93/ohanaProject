@@ -107,9 +107,9 @@
       imageCount = imageCount + x;
       if (imageCount == 5) imageCount = 1;
       
-      if (imageCount == 0) imageCount = 4;
+      if (imageCount == 0) imageCount = total;
 
-      image.src = "images/" + imageCount + ".jpg";  
+      image.src = "assets/images/" + imageCount + ".jpg";
   }
 
 </script>
@@ -117,10 +117,13 @@
 
     </div>
 
-    <div id="container"> 
-    <img src="images/1.jpg" id="img"/>
-    <div id=left_holder><img onClick="slide(-1)" class="left" src="{{asset('assets/images/left_arrow.png')}}"/></div>
-    <div id=right_holder><img onClick="slide(1)" class="right" src="{{asset('assets/images/right_arrow.png')}}"/></div>
+    <div id="container">
+        <div class="embed-responsive embed-responsive-16by9">
+            <img src="assets/images/1.jpg" id="img"/>
+            <!--<iframe class="embed-responsive-item" src="assets/images/1.jpg" id="img"></iframe> -->
+            <div id=left_holder><img onClick="slide(-1)" class="left" src="{{asset('assets/images/left_arrow.png')}}"/></div>
+            <div id=right_holder><img onClick="slide(1)" class="right" src="{{asset('assets/images/right_arrow.png')}}"/></div>
+        </div>
     </div>
     
     <div class="box1">

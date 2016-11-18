@@ -64,7 +64,7 @@
                                 <div class='col-xs-6'>
                                     <div class='row'>
                                         <div class='col-xs-12'>
-                                            <label for='imagen' class='control-label'>Imagen</label>
+                                            <label for='imagen' class='control-label'>Imagen de portada</label>
                                         </div>
                                     </div>
                                     <div class='row'>

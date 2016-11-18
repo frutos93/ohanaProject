@@ -14,6 +14,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 60%;
+        margin: auto;
+    }
+    .img-center {
+        margin:0 auto;
+    }
+    .no-padding {
+        padding: 0;
+    }
+    .content-green {
+        background-color: #74B02B
+    }
+    .content-blue {
+        background-color: #3BA69E;
+    }
+    section {
+        padding: 20px 0;
+    }
+    .rounded-border {
+        border-radius: 20px;
+    }
+</style>
+
+
 <body>
     @include('layouts.navBar')
     @yield('content')
