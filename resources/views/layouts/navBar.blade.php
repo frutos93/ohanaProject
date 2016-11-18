@@ -10,6 +10,10 @@
             <li><a href="/eventos">Eventos</a></li>
             <li><a href="#">Participa con nosotros</a></li>
             <li><a href="/contacto">Contacto</a></li>
+
+            @if (Auth()->user()->rol == 2)
+              <li><a href="/evento">Administrar Evento</a></li>
+            @endif
         </ul>
         </div>
     </nav>

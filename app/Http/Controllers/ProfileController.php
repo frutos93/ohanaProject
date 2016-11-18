@@ -28,6 +28,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
+      if(Auth()->user()->rol == 2) {
+        $nombre = Auth()->user()->name;
+        return($nombre);
+      }
 
     }
 

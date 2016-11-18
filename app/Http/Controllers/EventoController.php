@@ -49,18 +49,33 @@ class EventoController extends Controller
         $this->validate($request, array(
                 'nombre' => 'required',
                 'fecha' => 'required',
-                'lugar' => 'required'
+                'lugar' => 'required',
+                'coordinador_1' => 'required',
+                'coordinador_2' => 'required'
             ));
         // store data
-        DB::table('evento')->insert([
+        $eventoID = DB::table('evento')->insertGetId([
             'nombre' => $request->nombre,
             'fecha' => $request->fecha,
-            'lugar' => $request->lugar
+            'lugar' => $request->lugar,
+            'creado_por' => 2 //cambiar por id del director que hizo login
+            ]
+        );
+
+        DB::table('coordina_evento')->insert([
+            'evento_id' => $eventoID,
+            'coordinador_id' => $request->coordinador_1
+            ]
+        );
+
+        DB::table('coordina_evento')->insert([
+            'evento_id' => $eventoID,
+            'coordinador_id' => $request->coordinador_2
             ]
         );
 
         // redirect to another page
-        return redirect()->route('coordinadores');
+        return redirect()->route('evento.index');
     }
 
     /**
