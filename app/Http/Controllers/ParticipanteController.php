@@ -13,7 +13,7 @@ class ParticipanteController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -21,14 +21,31 @@ class ParticipanteController extends Controller
      */
     public function index()
     {
-        $participantes = 
-        DB::table('participante')
-            ->join('participacion', 'participante.id', '=', 'participacion.participante_id')
-            ->join('evento', 'participacion.evento_id', '=', 'evento.id')
-            ->join('casahogar', 'participante.casahogar_id', '=', 'casahogar.id')
-            ->select('participante.*', 'casahogar.nombre as chnombre','evento.nombre as etnombre',
-                'evento.id as etid','participacion.id as partid','participacion.equipo as partequipo')
-            ->get();
+        $id_coord_inSesion = Auth()->user()->id;
+
+        if(Auth()->user()->rol == 2) {
+          $participantes =
+          DB::table('participante')
+              ->join('participacion', 'participante.id', '=', 'participacion.participante_id')
+              ->join('evento', 'participacion.evento_id', '=', 'evento.id')
+              ->join('coordina_evento', 'evento.id', '=', 'coordina_evento.evento_id')
+              ->join('casahogar', 'participante.casahogar_id', '=', 'casahogar.id')
+              ->where('coordina_evento.coordinador_id', $id_coord_inSesion)
+              ->select('participante.*', 'casahogar.nombre as chnombre','evento.nombre as etnombre',
+                  'evento.id as etid','participacion.id as partid','participacion.equipo as partequipo')
+              ->get();
+
+        } else {
+          $participantes =
+          DB::table('participante')
+              ->join('participacion', 'participante.id', '=', 'participacion.participante_id')
+              ->join('evento', 'participacion.evento_id', '=', 'evento.id')
+              ->join('casahogar', 'participante.casahogar_id', '=', 'casahogar.id')
+              ->select('participante.*', 'casahogar.nombre as chnombre','evento.nombre as etnombre',
+                  'evento.id as etid','participacion.id as partid','participacion.equipo as partequipo')
+              ->get();
+
+        }
 
         return view('participantes_index')
                 ->with('participantes', $participantes);
@@ -61,7 +78,7 @@ class ParticipanteController extends Controller
                         ->where('evento.id', $miEventoId)
                         ->get()
                         ->first();
-    
+
         if(is_null($participante))
             return $this->index();
         else
@@ -86,7 +103,7 @@ class ParticipanteController extends Controller
                         ->where('evento.id', $miEventoId)
                         ->get()
                         ->first();
-    
+
         if(is_null($participante))
             return $this->  index();
         else

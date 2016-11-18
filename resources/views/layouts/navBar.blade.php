@@ -12,9 +12,28 @@
             <li><a href="/contacto">Contacto</a></li>
             <li><a href="/about">Historia</a></li>
 
-            @if (Auth()->user()->rol == 2)
-              <li><a href="/evento">Administrar Evento</a></li>
-            @endif
         </ul>
+
+
+        @if (Auth::check())
+        <ul class="nav navbar-nav">
+
+          @if (Auth()->user()->rol == 1)
+            <li><a href="/evento">Administrar Eventos</a></li>
+            <li><a href="/coordinadores">Coordinadores</a></li>
+            <li><a href="/participantes">Participantes</a></li>
+            <li><a href="/voluntarios">Voluntarios</a></li>
+            <li><a href="/logout">Logout</a></li>
+          @endif
+
+          @if (Auth()->user()->rol == 2)
+            <li><a href="/participantes">Registrar Niños</a></li>
+            <li><a href="/voluntarios">Registrar Staff</a></li>
+            <li><a href="/logout">Logout</a></li>
+          @endif
+        </ul>
+        @endif
+
+
         </div>
     </nav>
