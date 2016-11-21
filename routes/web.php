@@ -118,9 +118,6 @@ Route::post('/admin_galeria', 'GaleriaController@store')->name('admin_galeria.st
 Route::get('/admin_galeria/{id}/edit', 'GaleriaController@edit')->name('admin_galeria.edit');
 Route::put('/admin_galeria/{id}', 'GaleriaController@update')->name('admin_galeria.update');
 Route::delete('/admin_galeria/{id}', 'GaleriaController@destroy')->name('admin_galeria.destroy');
-Route::post('/coordinadores', 'CoordinadorController@store')->name('coordinadores.store');
-Route::post('/participantes', 'ParticipanteController@store')->name('participantes.store');
-Route::post('/voluntarios', 'VoluntarioController@store')->name('voluntarios.store');
 
 
 

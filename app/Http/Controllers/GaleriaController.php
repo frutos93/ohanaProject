@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Response;
 
 class GaleriaController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role_checking');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +28,10 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        //
         return view('galeria_index')->with('galerias', \App\Galeria::all());
     }
+
+
 
     /**
      * Show the form for creating a new resource.
