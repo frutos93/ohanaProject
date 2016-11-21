@@ -1,8 +1,15 @@
+<link href="css/app.css" rel="stylesheet">
 @extends('layouts.layout')
 
 @section('content')
 
-<link href="css/app.css" rel="stylesheet">
+<script>
+    $(document).ready(function () {
+        $(".nav li").removeClass("active");//this will remove the active class from previously active menu item
+        $('#estadisticas').addClass('active');
+    });
+</script>
+
 
 <section id="estadisticas" class="content-green">
     <div class="container">

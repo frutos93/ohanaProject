@@ -44,11 +44,60 @@
         border-radius: 20px;
     }
     .img-background {
+        position: relative;
+        overflow: hidden;
+    }
+    .img-background:before{
+        content:' ';
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
         background-image: url({{asset('assets/images/1.jpg')}});
         background-size: cover;
         background-position: center;
         opacity: 0.5;
     }
+    .img-background2 {
+        position: relative;
+        overflow: hidden;
+    }
+    .img-background2:before{
+        content:' ';
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url({{asset('assets/images/2.jpg')}});
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+    .img-background3 {
+        position: relative;
+        overflow: hidden;
+    }
+    .img-background3:before{
+        content:' ';
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image: url({{asset('assets/images/4.jpg')}});
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+    h1, h2, h3 {
+        color: black;
+    }
+
 </style>
 
 

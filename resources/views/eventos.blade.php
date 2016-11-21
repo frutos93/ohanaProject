@@ -1,6 +1,16 @@
+<link href="css/app.css" rel="stylesheet">
 @extends('layouts.layout')
 
 @section('content')
+
+<script>
+    $(document).ready(function () {
+        $(".nav li").removeClass("active");//this will remove the active class from previously active menu item
+        $('#eventos').addClass('active');
+    });
+</script>
+
+
 <style>
 
         .roundTable {

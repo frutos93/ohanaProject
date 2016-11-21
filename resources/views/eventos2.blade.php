@@ -1,15 +1,18 @@
+<link href="css/app.css" rel="stylesheet">
 @extends('layouts.layout')
 
 @section('content')
 
-<section id="eventos" class="content-blue">
-    <div class="container">
-        <div class="row page-header text-center">
-            <h1>
-                Eventos
-            </h1>
-        </div>
-    </div>
+<script>
+    $(document).ready(function () {
+        $(".nav li").removeClass("active");//this will remove the active class from previously active menu item
+        $('#eventos').addClass('active');
+    });
+</script>
+
+<link href="css/app.css" rel="stylesheet">
+
+<section id="eventos" class="content-green">
 
     <section id="slideshow" class="no-padding">
         <!-- Slideshow of home page -->
@@ -27,9 +30,11 @@
                 <div class="item active">
                     <img src="/assets/images/1.jpg" alt="Ohana">
                     <div class="carousel-caption">
+                        <div class="" style="background: rgba(59, 166, 158, 0.65)">
                         <h3><strong>Campamento Ohana</strong></h3>
                         <p>Campamento de verano donde replicamos un modelo de desarrollo de competencias, consolidado por el aprendizaje conjunto e incluyente de las diferentes comunidades e instituciones del país.</p>
                         <p>Alcance-100 niños en cada edición,dirigido a niños de casas hogar y situaciones vulnerables. Entre los 6 y los 12 años.</p>
+                        </div>
                     </div>
                 </div>
 

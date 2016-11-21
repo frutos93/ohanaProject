@@ -10,13 +10,13 @@
             <a class="navbar-brand" href="/home"><img src="{{asset('assets/images/OhanaLogoo.png')}}"></a>
         </div>
         <ul id="navegacion" class="nav navbar-nav collapse navbar-collapse">
-            <li class="active"><a href="/home">Ohana</a></li>
-            <li><a href="/estadisticas">Datos de México</a></li>
-            <li><a href="/gallery">Galeria</a></li>
-            <li><a href="/eventos">Eventos</a></li>
-            <li><a href="/participa">Participa con nosotros</a></li>
-            <li><a href="/contacto">Contacto</a></li>
-            <li><a href="/about">Historia</a></li>
+            <li id="home" class="active"><a href="/home">Ohana</a></li>
+            <li id="estadisticas"><a href="/estadisticas">Datos de México</a></li>
+            <li id="gallery"><a href="/gallery">Galeria</a></li>
+            <li id="eventos"><a href="/eventos">Eventos</a></li>
+            <li id="participa"><a href="/participa">Participa con nosotros</a></li>
+            <li id="contacto"><a href="/contacto">Contacto</a></li>
+            <li id="about"><a href="/about">Historia</a></li>
 
         </ul>
 

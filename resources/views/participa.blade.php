@@ -1,10 +1,16 @@
+<link href="css/app.css" rel="stylesheet">
 @extends('layouts.layout')
 
 @section('content')
 
-<link href="css/app.css" rel="stylesheet">
+<script>
+    $(document).ready(function () {
+        $(".nav li").removeClass("active");//this will remove the active class from previously active menu item
+        $('#participa').addClass('active');
+    });
+</script>
 
-<section id="participa-permanente" class="img-background">
+<section id="participa-permanente" class="img-background2">
     <div class="container">
         <div class="row page-header text-center">
             <h1>
@@ -41,7 +47,7 @@
     </div>
 </section>
 
-<section id="participa-nueva" class="img-background">
+<section id="participa-nueva" class="img-background3">
     <div class="container">
         <div class="row page-header text-center">
             <h1>
