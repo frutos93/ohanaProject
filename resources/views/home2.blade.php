@@ -77,8 +77,8 @@
                     <div class="row content-blue rounded-border">
                         <h2>¿Qué es Ohana?</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                    <p>Ohana es una Asociación Civil conformada por estudiantes de distintas universidades de México que por medio del voluntariado promueve el desarrollo social, el amor a la educación, el cuidado del medio ambiente, la importancia de los valores y el deseo de progresar como ciudadanos en los niños de casas hogar y escasos recursos</p>
+
                 </div>
                 <div class="col-md-4 card">
                     <div class="card-block">
@@ -99,8 +99,7 @@
                     <div class="row content-green rounded-border">
                         <h2>¿Quiénes lo conforman?</h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+                    <p>Conformado por grupos estudiantiles de distintas universidades y preparatorias de Nuevo León e integrado por una mesa directiva y gabinetes de trabajo. Todos en conjunto estamos conformados por jóvenes voluntarios comprometidos en transformar comunidades. </p>
                 </div>
             </div>
             <!-- /.row -->

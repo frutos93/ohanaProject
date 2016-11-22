@@ -77,12 +77,12 @@
 
       .box1 {
           color: white;
-          
+
           border: 25px;
           padding: 15px;
-          
+
           background: yellowgreen;
-          
+
       }
       .box2 {
           color: white;
@@ -91,11 +91,11 @@
           width: 550px;
           border: 25px;
           padding: 15px;
-          
+
           background: #3BAA9F;
-          
+
       }
-      
+
 </style>
 
 <script type="text/javascript">
@@ -106,7 +106,7 @@
       var image = document.getElementById('img');
       imageCount = imageCount + x;
       if (imageCount == 5) imageCount = 1;
-      
+
       if (imageCount == 0) imageCount = total;
 
       image.src = "assets/images/" + imageCount + ".jpg";
@@ -125,33 +125,32 @@
             <div id=right_holder><img onClick="slide(1)" class="right" src="{{asset('assets/images/right_arrow.png')}}"/></div>
         </div>
     </div>
-    
+
     <div class="box1">
     <img src="{{asset('assets/images/logo.png')}}"  style="width:200px;height:210px;border-radius:10px;" align="right">
     <h2 >¿Qué es Ohana?</h2>
    <div class="boxed1">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
-     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-     laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non 
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Ohana es una Asociación Civil conformada por estudiantes de distintas
+      universidades de México que por medio del voluntariado promueve el
+      desarrollo social, el amor a la educación, el cuidado del medio ambiente,
+      la importancia de los valores y el deseo de progresar como ciudadanos en
+      los niños de casas hogar y escasos recursos.
 
   </div>
 
   </div>
-    
+
     <div class="box2">
     <h3 align="right">¿Quiénes lo conforman?</h3>
     <div class="boxed2">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut
-     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-     laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non 
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Conformado por grupos estudiantiles de distintas universidades y
+      preparatorias de Nuevo León e integrado por una mesa directiva y
+      gabinetes de trabajo. Todos en conjunto estamos conformados por
+      jóvenes voluntarios comprometidos en transformar comunidades. 
     </div>
 
     </div>
 
-  
+
   </body>
 @endsection
