@@ -21,7 +21,14 @@ class VoluntarioController extends Controller
      */
     public function index()
     {
-        return view('voluntarios_index')->with('voluntarios', \App\Voluntario::all());
+        $voluntarios =
+          DB::table('voluntario')
+              ->join('participacion_voluntariado', 'voluntario.id', '=', 'participacion_voluntariado.voluntario_id')
+              ->join('evento', 'participacion_voluntariado.evento_id', '=', 'evento.id')
+              ->select('voluntario.*', 'evento.id as etid','participacion_voluntariado.id as partid','evento.nombre as etnombre',
+                'participacion_voluntariado.equipo as partequipo', 'participacion_voluntariado.puesto as partpuesto')
+              ->get();
+        return view('voluntarios_index')->with('voluntarios', $voluntarios);
     }
 
     /**
@@ -31,18 +38,32 @@ class VoluntarioController extends Controller
      */
     public function create()
     {
-        return view('voluntarios_create');
+        return view('voluntarios_create')->with('eventos', \App\Evento::pluck('nombre', 'id'));;
     }
 
     public function modify()
     {
         $miId = Input::get('id');
-        $voluntario = DB::table('voluntario')->where('id', $miId)->first();
+        $miEventoId = Input::get('eventoid');
+        $miParticipacion = Input::get('participacionid');
+
+        $voluntario = DB::table('voluntario')
+                        ->where('voluntario.id', $miId)
+                        ->join('participacion_voluntariado', 'voluntario.id', '=', 'participacion_voluntariado.voluntario_id')
+                        ->join('evento', 'participacion_voluntariado.evento_id', '=', 'evento.id')
+                        ->select('voluntario.*', 'participacion_voluntariado.evento_id as eventoid','participacion_voluntariado.equipo as participacionequipo',
+                            'participacion_voluntariado.puesto as partpuesto')
+                        ->where('evento.id', $miEventoId)
+                        ->get()
+                        ->first();
     
         if(is_null($voluntario))
             return $this->  index();
         else
-            return view('voluntarios_modify')->with('voluntario', $voluntario);
+            return view('voluntarios_modify')->with('voluntario', $voluntario)
+                        ->with('eventos', \App\Evento::pluck('nombre', 'id'))
+                        ->with('srcEventoId', $miEventoId)
+                        ->with('srcParticipacionId', $miParticipacion);
     }
 
     /**
@@ -53,12 +74,25 @@ class VoluntarioController extends Controller
     public function delete()
     {
         $miId = Input::get('id');
-        $voluntario = DB::table('voluntario')->where('id', $miId)->first();
+        $miEventoId = Input::get('eventoid');
+        $miParticipacion = Input::get('participacionid');
+        $voluntario = DB::table('voluntario')
+                        ->where('voluntario.id', $miId)
+                        ->join('participacion_voluntariado', 'voluntario.id', '=', 'participacion_voluntariado.voluntario_id')
+                        ->join('evento', 'participacion_voluntariado.evento_id', '=', 'evento.id')
+                        ->select('voluntario.*', 'participacion_voluntariado.evento_id as eventoid','participacion_voluntariado.equipo as participacionequipo',
+                            'participacion_voluntariado.puesto as partpuesto')
+                        ->where('evento.id', $miEventoId)
+                        ->get()
+                        ->first();
     
         if(is_null($voluntario))
             return $this->  index();
         else
-            return view('voluntarios_delete')->with('voluntario', $voluntario);
+            return view('voluntarios_delete')->with('voluntario', $voluntario)
+                            ->with('eventos', \App\Evento::pluck('nombre', 'id'))
+                            ->with('srcEventoId', $miEventoId)
+                            ->with('srcParticipacionId', $miParticipacion);
     }
 
     /**
@@ -77,11 +111,19 @@ class VoluntarioController extends Controller
             ));
 
         // store data
-        DB::table('voluntario')->insert([
+        $voluntarioId = DB::table('voluntario')->insertGetId([
             'nombre' => $request->nombre,
             'apellido_paterno' => $request->apellido_paterno,
             'apellido_materno' => $request->apellido_materno,
             'escuela' => $request->escuela,
+            ]
+        );
+
+        DB::table('participacion_voluntariado')->insert([
+            'voluntario_id' => $voluntarioId,
+            'evento_id' => $request->evento_id,
+            'equipo' => $request->equipo,
+            'puesto' => $request->puesto,
             ]
         );
 
@@ -115,7 +157,28 @@ class VoluntarioController extends Controller
                 'escuela' => $request->escuela,
                 ]);
 
+        DB::table('participacion_voluntariado')
+            ->where('id', $request->srcParticipacionId)
+            ->update([
+                'evento_id' => $request->evento_id,
+                'equipo' => $request->equipo,
+                'puesto' => $request->puesto,
+            ]);
+
         // redirect to another page
+        return redirect()->route('voluntarios.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        DB::table('voluntario')->where('id', '=', $request->id)->delete();
+        DB::table('participacion_voluntariado')->where('id', '=', $request->srcParticipacionId)->delete();
         return redirect()->route('voluntarios.index');
     }
 
@@ -141,15 +204,6 @@ class VoluntarioController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Request $request)
-    {
-        DB::table('voluntario')->where('id', '=', $request->id)->delete();
-        return redirect()->route('voluntarios.index');
-    }
+    
+    
 }

@@ -80,6 +80,44 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Evento</label>
+                            <div class="col-md-6">
+                                    {{ Form::select('evento_id', $eventos, 
+                                    null,
+                                    [
+                                        'class' => 'form-control    ',
+                                        'required' => 'required'
+                                    ]) }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Equipo</label>
+                            <div class="col-md-6">
+                                {!! Form::text('equipo', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Puesto</label>
+                            <div class="col-md-6">
+                                {!! Form::text('puesto', '', [
+                                    'class' => 'form-control',
+                                    'autofocus' => 'autofocus',
+                                    'required' => 'required'
+                                ]) !!}
+                                <!-- <input id="name" type="text" class="form-control" name="name" value="" required autofocus>-->
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 {!! Form::submit('Registrar', [
                                     'class' => 'btn btn-success'

@@ -40,6 +40,30 @@
                                 </div>
                             </div>
 
+                            <div class="form-group" hidden>
+                                <div class="col-md-6">
+                                    {!! Form::text('participanteId', $voluntario->id, [
+                                        'required' => 'required',
+                                    ]) !!}
+                                </div>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <div class="col-md-6">
+                                    {!! Form::text('srcEventoId', $srcEventoId, [
+                                        'required' => 'required',
+                                    ]) !!}
+                                </div>
+                            </div>
+
+                            <div class="form-group" hidden>
+                                <div class="col-md-6">
+                                    {!! Form::text('srcParticipacionId', $srcParticipacionId, [
+                                        'required' => 'required',
+                                    ]) !!}
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="name" class="col-md-4 control-label">Nombre</label>
                                 <div class="col-md-6">
@@ -76,6 +100,39 @@
                                 <label for="name" class="col-md-4 control-label">Escuela</label>
                                 <div class="col-md-6">
                                     {!! Form::text('escuela', $voluntario->escuela, [
+                                        'class' => 'form-control',
+                                        'autofocus' => 'autofocus',
+                                        'required' => 'required'
+                                    ]) !!}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name" class="col-md-4 control-label">Evento</label>
+                                <div class="col-md-6">
+                                        {{ Form::select('evento_id', $eventos, $voluntario->eventoid,
+                                        [
+                                            'class' => 'form-control    ',
+                                            'required' => 'required'
+                                        ]) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name" class="col-md-4 control-label">Equipo</label>
+                                <div class="col-md-6">
+                                    {!! Form::text('equipo', $voluntario->participacionequipo, [
+                                        'class' => 'form-control',
+                                        'autofocus' => 'autofocus',
+                                        'required' => 'required'
+                                    ]) !!}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name" class="col-md-4 control-label">Puesto</label>
+                                <div class="col-md-6">
+                                    {!! Form::text('puesto', $voluntario->partpuesto, [
                                         'class' => 'form-control',
                                         'autofocus' => 'autofocus',
                                         'required' => 'required'

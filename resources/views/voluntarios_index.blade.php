@@ -38,6 +38,9 @@
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
                                         <th>Escuela</th>
+                                        <th>Evento</th>
+                                        <th>Equipo</th>
+                                        <th>Puesto</th>
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
                                     </tr>
@@ -48,16 +51,27 @@
                                             <td>{{ $voluntario->nombre }}</td>
                                             <td>{{ $voluntario->apellido_paterno . ' ' . $voluntario->apellido_materno }}</td>
                                             <td>{{ $voluntario->escuela }}</td>
+                                            <td>{{ $voluntario->etnombre }}</td>
+                                            <td>{{ $voluntario->partequipo }}</td>
+                                            <td>{{ $voluntario->partpuesto }}</td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('voluntarios.modify', ['id' => $voluntario->id] ) }}">
+                                                    <a href="{{ route('voluntarios.modify', [
+                                                    'id' => $voluntario->id,
+                                                    'eventoid' => $voluntario->etid,
+                                                    'participacionid' => $voluntario->partid,
+                                                    ] ) }}">
                                                         <button type="button" class="btn btn-primary">Modificar</button>
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="col-xs-2">
-                                                    <a href="{{ route('voluntarios.delete', ['id' => $voluntario->id] ) }}">
+                                                    <a href="{{ route('voluntarios.delete', [
+                                                    'id' => $voluntario->id,
+                                                    'eventoid' => $voluntario->etid,
+                                                    'participacionid' => $voluntario->partid,
+                                                    ] ) }}">
                                                         <button type="button" class="btn btn-danger">Eliminar</button>
                                                     </a>
                                                 </div>
