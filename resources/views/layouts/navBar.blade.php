@@ -26,7 +26,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/evento">Administrar Eventos</a></li>
                             <li><a href="/coordinadores">Coordinadores</a></li>
-                            <li><a href="'/register'">Crear cuenta coordinador</a></li>
+                            <li><a href="/register">Crear cuenta coordinador</a></li>
                             <li><a href="/participantes">Participantes</a></li>
                             <li><a href="/voluntarios">Voluntarios</a></li>
                             <li><a href="/admin_galeria">Administrar Galerias</a></li>
