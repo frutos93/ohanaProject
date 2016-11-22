@@ -35,6 +35,7 @@
     </div>
 </section>
 <section id="actualidad">
+    <div class="container">
         <div class="row">
             <div class="page-header text-center">
                     <h1>
@@ -72,8 +73,10 @@
             </div>
         </div>  
         <br>
+        </div>
 </section>
 <section id="ohamaCambio" class="content-blue">
+    <div class="container">
         <div class="page-header text-center">
             <h1>
                 Ohana por el cambio
